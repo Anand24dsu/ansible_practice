@@ -1,0 +1,10 @@
+- name: Install Apache on web hosts
+  hosts: all
+  tasks:
+    - name: Example from an Ansible Playbook
+      ansible.builtin.ping:
+        ping: pong
+
+    - name: Induce an exception to see what happens
+      ansible.builtin.ping:
+        data: crash

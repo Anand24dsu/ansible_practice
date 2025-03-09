@@ -1,0 +1,12 @@
+---
+- name: Set up a user with a password
+  hosts: all
+  become: yes
+  tasks:
+    - name: Ensure the user exists with a password, home directory, and shell
+      ansible.builtin.user:
+        name: anand
+        state: present
+        shell: /bin/bash
+        createhome: yes
+        password: "{{ 'anand' | password_hash('sha512') }}"

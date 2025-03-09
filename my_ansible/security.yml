@@ -1,0 +1,22 @@
+- name: Configure SSH securely
+  hosts: my_hosts  # Match the group name in your inventory
+  become: yes
+  tasks:
+    - name: Disable root login
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^PermitRootLogin'
+        line: 'PermitRootLogin no'
+        state: present
+
+    - name: Disable password authentication
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^PasswordAuthentication'
+        line: 'PasswordAuthentication no'
+        state: present
+
+    - name: Ensure SSH service is restarted
+      service:
+        name: ssh
+        state: restarted

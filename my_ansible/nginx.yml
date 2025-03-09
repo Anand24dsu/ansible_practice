@@ -1,0 +1,63 @@
+---
+- name: Install Apache on web hosts
+  hosts: all
+  tasks:
+    - name: Install Apache on Debian
+      ansible.builtin.apt:
+        name: apache2
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Install Apache on RedHat
+      ansible.builtin.yum:
+        name: httpd
+        state: present
+      when: ansible_os_family == "RedHat"
+
+    - name: Install Apache on Alpine
+      ansible.builtin.apk:
+        name: apache2
+        state: present
+      when: ansible_os_family == "Alpine"
+
+- name: Install Nginx on app hosts
+  hosts: all
+  tasks:
+    - name: Install Nginx on Debian
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Install Nginx on RedHat
+      ansible.builtin.yum:
+        name: nginx
+        state: present
+      when: ansible_os_family == "RedHat"
+
+    - name: Install Nginx on Alpine
+      ansible.builtin.apk:
+        name: nginx
+        state: present
+      when: ansible_os_family == "Alpine"
+
+- name: Install Python3 on db hosts
+  hosts: all
+  tasks:
+    - name: Install Python3 on Debian
+      ansible.builtin.apt:
+        name: python3
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Install Python3 on RedHat
+      ansible.builtin.yum:
+        name: python3
+        state: present
+      when: ansible_os_family == "RedHat"
+
+    - name: Install Python3 on Alpine
+      ansible.builtin.apk:
+        name: python3
+        state: present
+      when: ansible_os_family == "Alpine"

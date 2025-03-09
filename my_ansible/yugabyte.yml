@@ -1,0 +1,79 @@
+---
+- name: Install YugabyteDB
+  hosts: all
+  become: yes
+  tasks:
+    - name: Remove conflicting Docker packages (Debian-based)
+      apt:
+        name:
+          - containerd
+          - docker
+          - docker-engine
+          - docker.io
+          - runc
+        state: absent
+      when: ansible_os_family == "Debian"
+
+    - name: Install dependencies for Docker (Debian-based)
+      apt:
+        name:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - software-properties-common
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Add Docker's official GPG key (Debian-based)
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Add Docker repository (Debian-based)
+      apt_repository:
+        repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable"
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Install Docker (Debian-based)
+      apt:
+        name: docker-ce
+        state: present
+        update_cache: yes
+      when: ansible_os_family == "Debian"
+
+    - name: Install Docker (RedHat-based)
+      yum:
+        name: docker
+        state: present
+      when: ansible_os_family == "RedHat"
+
+    - name: Install Docker (Alpine-based)
+      apk:
+        name: docker
+        state: present
+      when: ansible_os_family == "Alpine"
+
+    - name: Start Docker service
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Pull YugabyteDB Docker image
+      docker_image:
+        name: yugabytedb/yugabyte
+        tag: latest
+        source: pull
+
+    - name: Run YugabyteDB container
+      docker_container:
+        name: yugabyte
+        image: yugabytedb/yugabyte:latest
+        state: started
+        ports:
+          - "7000:7000"
+          - "9000:9000"
+          - "9042:9042"
+          - "5433:5433"

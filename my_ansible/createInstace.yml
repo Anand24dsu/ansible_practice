@@ -1,0 +1,90 @@
+---
+- name: Create AWS EC2 instance and setup passwordless SSH
+  hosts: localhost
+  gather_facts: false
+  vars:
+    aws_region: "us-east-1"
+    instance_type: "t2.micro"
+    ami_id: "ami-04b4f1a9cf54c11d0"  # Change this to your region's Ubuntu AMI
+    key_name: "my-ansible-key"
+    security_group: "my-security-group"
+    ssh_key_file: "~/.ssh/my-ansible-key"
+    username: "ubuntu"  # Change this for Amazon Linux/RHEL
+    remote_port: 22
+
+  tasks:
+    - name: Create key pair if not exists
+      amazon.aws.ec2_key:
+        name: "{{ key_name }}"
+        region: "{{ aws_region }}"
+      register: ec2_key
+      ignore_errors: true
+
+    - name: Save the private key locally
+      copy:
+        content: "{{ ec2_key.key.private_key }}"
+        dest: "{{ ssh_key_file }}"
+        mode: "0600"
+      when: ec2_key.changed
+
+    - name: Ensure security group exists
+      amazon.aws.ec2_group:
+        name: "{{ security_group }}"
+        description: "Allow SSH"
+        region: "{{ aws_region }}"
+        rules:
+          - proto: tcp
+            ports: [22]
+            cidr_ip: "0.0.0.0/0"
+      register: sg_creation
+
+    - name: Launch EC2 instance
+      amazon.aws.ec2_instance:
+        name: "Ansible-Managed-EC2"
+        key_name: "{{ key_name }}"
+        instance_type: "{{ instance_type }}"
+        security_group: "{{ security_group }}"
+        image_id: "{{ ami_id }}"
+        region: "{{ aws_region }}"
+        wait: yes
+      register: ec2_instance
+
+    - name: Wait for SSH to be available
+      wait_for:
+        host: "{{ ec2_instance.instances[0].public_ip_address }}"
+        port: "{{ remote_port }}"
+        delay: 10
+        timeout: 300
+
+    - name: Add EC2 instance to Ansible inventory
+      add_host:
+        name: "new_ec2"
+        ansible_host: "{{ ec2_instance.instances[0].public_ip_address }}"
+        ansible_user: "{{ username }}"
+        ansible_ssh_private_key_file: "{{ ssh_key_file }}"
+        ansible_ssh_common_args: "-o StrictHostKeyChecking=no"
+
+- name: Configure passwordless SSH
+  hosts: new_ec2
+  gather_facts: false
+  tasks:
+    - name: Ensure .ssh directory exists
+      file:
+        path: "~/.ssh"
+        state: directory
+        mode: "0700"
+
+    - name: Copy public key to remote host
+      authorized_key:
+        user: "{{ ansible_user }}"
+        state: present
+        key: "{{ lookup('file', '{{ ssh_key_file }}.pub') }}"
+
+    - name: Test SSH connection
+      shell: "hostname; id"
+      register: ssh_test
+      failed_when: ssh_test.rc != 0
+
+    - name: Print SSH test output
+      debug:
+        var: ssh_test.stdout_lines

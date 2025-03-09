@@ -1,0 +1,55 @@
+---
+- name: First basic playbook
+  hosts: all
+  gather_facts: yes  # Ensure facts are gathered
+  tasks:
+    - name: Test connectivity
+      ping: {}
+
+    - name: Ensure Python is installed (required for Ansible)
+      raw: |
+        if command -v python3; then
+          echo "Python3 is installed"
+        elif command -v python; then
+          echo "Python is installed"
+        else
+          echo "Installing Python"
+          if command -v apk; then
+            apk add --no-cache python3
+          elif command -v apt-get; then
+            apt-get update && apt-get install -y python3
+          elif command -v yum; then
+            yum install -y python3
+          else
+            echo "Unsupported package manager"
+            exit 1
+          fi
+        fi
+      args:
+        executable: /bin/sh
+      changed_when: false
+
+    - name: Gather facts (if not already gathered)
+      setup:
+
+    - name: Print OS information
+      debug:
+        msg: "{{ ansible_distribution }} {{ ansible_distribution_version }}"
+
+    - name: Install Apache (Debian-based)
+      apt:
+        name: apache2
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Install Apache (Red Hat-based)
+      yum:
+        name: httpd
+        state: present
+      when: ansible_os_family == "RedHat"
+
+    - name: Install Apache (Alpine-based)
+      apk:
+        name: apache2
+        state: present
+      when: ansible_os_family == "Alpine"
