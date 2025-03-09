@@ -1,0 +1,15 @@
+- name: Copy and fetch file
+  hosts: all
+  tasks:
+    - name: Copy envsetup.sh to foo.sh
+      ansible.builtin.copy:
+        src: envsetup.sh
+        dest: ~/foo.sh
+        owner: gagana
+        mode: '0644'
+
+    - name: Fetch foo.sh to local directory
+      ansible.builtin.fetch:
+        src: ~/foo.sh
+        dest: /home/dopadm/ansible_practice/fetched_files/
+        flat: true

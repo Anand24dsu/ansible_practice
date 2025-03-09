@@ -1,0 +1,36 @@
+- hosts: all
+  vars:
+    installtype: "prod"
+    # version: 9.1
+  vars_files:
+    - extvar.yml
+    - var2.yml
+
+  tasks:
+    - debug:
+        msg: "{{ ansible_os_family }}"
+
+    - debug: 
+        var: installtype
+
+    - debug:
+        var: externalvar  
+
+    - debug:
+        var: var2  
+
+    - debug:
+        var: foo.subkey1  
+
+    - debug:
+        var: names  
+
+    - debug:
+        var: int_values  
+
+    - ansible.builtin.debug:
+        var: version
+      when: version is defined
+    - template:
+        src: var.j2
+        dest: para.txt

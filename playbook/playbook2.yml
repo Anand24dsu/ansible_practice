@@ -1,0 +1,26 @@
+- name: My second play
+  hosts: all
+
+  gather_facts: true
+  tasks:
+   - name: Ping my hosts
+     ansible.builtin.ping:
+
+   - name: Print message
+     ansible.builtin.debug:
+       msg: Hello world! {{ ansible_os_family }}
+   - name: Print message
+     ansible.builtin.debug:
+       msg: Hello world! {{ ansible_user_shell }}
+   - name: Print message
+     ansible.builtin.debug:
+       msg: Hello world!{{ansible_virtualization_type}}
+   - name: Print message
+     ansible.builtin.debug:
+       msg: Hello world!{{ansible_processor}} 
+   - name: Print message
+     ansible.builtin.debug:
+       msg: ansible_all_ipv4_addresses 
+   - name: Print message
+     ansible.builtin.debug:
+       msg: ansible_uptime_seconds

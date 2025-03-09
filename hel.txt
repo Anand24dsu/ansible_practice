@@ -1,0 +1,2004 @@
+ 1069  cd
+ 1070  cd MY_TERRAFROM/AWS_DEVOPS/
+ 1071  cd provisioner/
+ 1072  ll
+ 1073  code .
+ 1074  terraform apply
+ 1075  ssh -i private.pem 54.188.246.79@ubuntu
+ 1076  ssh -i private.pem ubuntu@54.188.246.79
+ 1077  terraform destory
+ 1078  terraform destroy
+ 1079  ll
+ 1080  terraform apply
+ 1081  ssh -i private.pem ubuntu@35.91.135.44"
+ 1082  ssh -i private.pem ubuntu@35.91.135.44
+ 1083  terraform destroy
+ 1084  cd ../s3_bucket/
+ 1085  ll
+ 1086  cat main.tf 
+ 1087  cd
+ 1088  cat .bashrc
+ 1089  cd MY_TERRAFROM/AWS_DEVOPS/
+ 1090  cd s3_bucket/
+ 1091  ll
+ 1092  cta main.tf 
+ 1093  cat main.tf 
+ 1094  cd ../
+ 1095  cd practice/
+ 1096  ll
+ 1097  cd Terraform/
+ 1098  ll
+ 1099  cd hashicorp-certified-terraform-associate/
+ 1100  cd 10-Terraform-Modules/
+ 1101  ll
+ 1102  cd 10-01-Terraform-Modules-Basics/
+ 1103  ll
+ 1104  cd terraform-manifests
+ 1105  ll
+ 1106  cat *
+ 1107  ll;
+ 1108  ;
+ 1109  l;
+ 1110  l; ll;
+ 1111  l; l
+ 1112  cat *; ll;
+ 1113  printf("hello");
+ 1114  printf "hello\n"
+ 1115  4
+ 1116  cd MY_TERRAFROM/
+ 1117  cd AWS_DEVOPS/
+ 1118  ll
+ 1119  mkdir TerraformWorkspace
+ 1120  cd TerraformWorkspace/
+ 1121  ll
+ 1122  mkdir projectA
+ 1123  cd projectA/
+ 1124  ll
+ 1125  code .
+ 1126  cd ../../EC2/
+ 1127  ll
+ 1128  cat main.tf 
+ 1129  cd ../TerraformWorkspace/
+ 1130  cd projectA/
+ 1131  ll
+ 1132  cd ..
+ 1133  ll
+ 1134  mkdir projectB
+ 1135  ll
+ 1136  cd projectB/
+ 1137  ll
+ 1138  code .
+ 1139  cd ..
+ 1140  terraform workspace new projectA
+ 1141  terraform workspace list
+ 1142  terraform console
+ 1143  terraform plan
+ 1144  terraform workspace new projectB
+ 1145  terraform workspace list
+ 1146  terraform plan
+ 1147  terraform init
+ 1148  terraform workspace select projectA
+ 1149  terraform init
+ 1150  cd project
+ 1151  cd projectA/
+ 1152  terraform init
+ 1153  cd ../
+ 1154  terraform workspace select projectA
+ 1155  terraform init
+ 1156  code .
+ 1157  touch main.tf variable.tf
+ 1158  terraform init
+ 1159  terraform plan
+ 1160  terraform init
+ 1161  terraform plan
+ 1162  terraform apply
+ 1163  terraform destroy
+ 1164  ll
+ 1165  cd MY_TERRAFROM/
+ 1166  cd AWS_DEVOPS/
+ 1167  ll
+ 1168  cd provisioner/
+ 1169  ll
+ 1170  cat yba.sh 
+ 1171  cd MY_TERRAFROM/AWS_DEVOPS/
+ 1172  ll
+ 1173  mkdir RDS
+ 1174  cd RDS
+ 1175  code .
+ 1176  terraform init 
+ 1177  cd ../EC2/
+ 1178  cat main.tf 
+ 1179  cd ../RDS/
+ 1180  ll]
+ 1181  l
+ 1182  terraform init 
+ 1183  exit 
+ 1184  exit
+ 1185  cd .ssh/
+ 1186  ll
+ 1187  cd 
+ 1188  terraform init
+ 1189  exit
+ 1190  terraform init
+ 1191  cd MY_TERRAFROM/AWS_DEVOPS/RDS/
+ 1192  terraform init
+ 1193  terraform plan
+ 1194  terraform init
+ 1195  clear
+ 1196  ls
+ 1197  terraform get --update=true
+ 1198  cd MY_TERRAFROM/AWS_DEVOPS/
+ 1199  cd RDS/
+ 1200  ll
+ 1201  terraform get --update=true
+ 1202  terraform init
+ 1203  cd MY_TERRAFROM/
+ 1204  cd AWS_DEVOPS/
+ 1205  cd EC2/
+ 1206  ll
+ 1207  cp .terraform/ ../RDS/.
+ 1208  cp .terraform/ ../RDS/ .
+ 1209  cp -r .terraform/ ../RDS/ .
+ 1210  cp -r .terraform/ RDS/
+ 1211  cd ../RDS/
+ 1212  ll
+ 1213  terraform init
+ 1214  cd MY_TERRAFROM/
+ 1215  ls
+ 1216  cd AWS_DEVOPS/
+ 1217  ls
+ 1218  cd RDS/
+ 1219  ls
+ 1220  cd MY_TERRAFROM/
+ 1221  cd AWS_DEVOPS/
+ 1222  ll
+ 1223  ll
+ 1224  terraform apply
+ 1225  ssh -i private.pem ubuntu@10.0.1.77
+ 1226  terraform destroy
+ 1227  cd MY_TERRAFROM/
+ 1228  ls
+ 1229  cd AWS_DEVOPS/
+ 1230  clear
+ 1231  ls
+ 1232  cd RDS/
+ 1233  ls
+ 1234  ls -a
+ 1235  code .
+ 1236  terraform init
+ 1237  terraform plan
+ 1238  code .
+ 1239  terraform plan
+ 1240  terraform apply
+ 1241  cd ../EC2/
+ 1242  cat main.tf 
+ 1243  cd ../RDS/
+ 1244  terraform apply
+ 1245  cd ../provisioner/
+ 1246  cat main.tf 
+ 1247  cd ../RDS/
+ 1248  ll
+ 1249  terraform apply
+ 1250  terraform init -upgrade
+ 1251  terraform plan
+ 1252  terraform apply
+ 1253  terraform init -upgrade
+ 1254  terraform plan
+ 1255  terraform apply
+ 1256  ll
+ 1257  p/home/dopadm/.ssh/id_ed25519 
+ 1258  cd MY_TERRAFROM/AWS_DEVOPS/
+ 1259  cd RDS/
+ 1260  terraform apply
+ 1261  ll
+ 1262  ssh -i private.pem ubuntu@52.42.205.19\
+ 1263  ssh -i private.pem ubuntu@52.42.205.19
+ 1264  ssh -i private.pem root@52.42.205.19
+ 1265  ssh -i private root@52.42.205.19
+ 1266  ssh -i "private.pem" root@52.42.205.19
+ 1267  ssh -i private.pem root@52.42.205.19
+ 1268  chmod 0400 private.pem
+ 1269  ssh -i private.pem root@52.42.205.19
+ 1270  chmod 400 private.pem
+ 1271  ssh -i private.pem root@52.42.205.19
+ 1272  ssh -i private.pem ubuntu@52.42.205.19
+ 1273  ssh -i "tf-key-new.pem" ubuntu@ec2-52-42-205-19.us-west-2.compute.amazonaws.com
+ 1274  ssh -i "private.pem" ubuntu@ec2-52-42-205-19.us-west-2.compute.amazonaws.com
+ 1275  ssh -i private.pem ubuntu@ec2-52-42-205-19.us-west-2.compute.amazonaws.com
+ 1276  ssh -i private.pem ubuntu@52.42.205.19
+ 1277  terraform destroy
+ 1278  cd ../
+ 1279  mkdir AutoScaling
+ 1280  cd AutoScaling/
+ 1281  ll
+ 1282  code .
+ 1283  terraform INIT
+ 1284  terraform init
+ 1285  cd ../EC2/
+ 1286  cat main.tf 
+ 1287  cd ../AutoScaling/
+ 1288  terraform init
+ 1289  terraform plan
+ 1290  cd MY_TERRAFROM/AWS_DEVOPS/AutoScaling/
+ 1291  terraform plan
+ 1292  terraform apply
+ 1293  terraform destroy
+ 1294  aws ec2 describe-snapshots --query 'Snapshots[*].{ID:SnapshotId,Size:VolumeSize,State:State,StartTime:StartTime}'
+ 1295  aws ec2 describe-snapshots
+ 1296  aws ec2 describe-snapshots --region us-west-2
+ 1297  vi aws.sh 
+ 1298  cd MY_TERRAFROM/
+ 1299  cd AWS_DEVOPS/
+ 1300  cd AutoScaling/
+ 1301  ll
+ 1302  cat *
+ 1303  https://aws.amazon.com/getting-started/hands-on/migrate-rdsmysql-to-auroramysql/?ref=gsrchandson
+ 1304  code .
+ 1305  bash aws.sh 
+ 1306  bash aws.sh 
+ 1307  vi aws.sh 
+ 1308  bash aws.sh 
+ 1309  vi aws.sh 
+ 1310  bash aws.sh 
+ 1311  rm -rf aws.sh 
+ 1312  lls
+ 1313  ll
+ 1314  exit
+ 1315  ssh localhost
+ 1316  cd MY_TERRAFROM/
+ 1317  ll
+ 1318  git add .
+ 1319  git commit - m "terraform"
+ 1320  git commit -m "terraform"
+ 1321  git push
+ 1322  git push --set-upstream origin main
+ 1323  ll
+ 1324  git status
+ 1325  git log 
+ 1326  git tag
+ 1327  git lfs install
+ 1328  git lfs track "*.largefileextension"
+ 1329  git add .gitattributes
+ 1330  git commit -m "Track large files with Git LFS"
+ 1331  git push
+ 1332  sudo apt-get install git-lfs
+ 1333  git lfs track "*.largefileextension"
+ 1334  git add .gitattributes
+ 1335  git commit -m "Track large files with Git LFS"
+ 1336  git push --set-upstream origin main
+ 1337  git lfs --version
+ 1338  git config --global http.proxy http://proxyuser:proxypassword@proxyaddress:proxyport
+ 1339  git config --global https.proxy https://proxyuser:proxypassword@proxyaddress:proxyport
+ 1340  git push --set-upstream origin main
+ 1341  git push
+ 1342  git push --set-upstream origin main
+ 1343  git config --global --unset http.proxy
+ 1344  git config --global --unset https.proxy
+ 1345  git push --set-upstream origin main
+ 1346  cd MY_TERRAFROM/AWS_D
+ 1347  cd MY_TERRAFROM/AWS_DEVOPS/
+ 1348  ll
+ 1349  cd EC2/
+ 1350  ll
+ 1351  cat main.tf 
+ 1352  cd 
+ 1353  ssh-keygen
+ 1354  cd
+ 1355  cd .ssh/
+ 1356  ll
+ 1357  cp id_ed25519 id_ed25519.pub  ~/
+ 1358  cp id_ed25519 id_ed25519.pub  ~/MY_TERRAFROM/AWS_DEVOPS/my-terraform-module/ .
+ 1359  cp -r id_ed25519 id_ed25519.pub  ~/MY_TERRAFROM/AWS_DEVOPS/my-terraform-module/ .
+ 1360  cp -r id_ed25519 id_ed25519.pub ~/MY_TERRAFROM/AWS_DEVOPS/my-terraform-module/
+ 1361  cd 
+ 1362  cd MY_TERRAFROM/AWS_D
+ 1363  cd MY_TERRAFROM/AWS_DEVOPS/my-terraform-module/
+ 1364  ll
+ 1365  ssh 44.245.216.40
+ 1366  ssh ubuntu@44.245.216.40
+ 1367  ssh -i id_ed25519 ubuntu@44.245.216.40
+ 1368  exit
+ 1369  cd MY_TERRAFROM/
+ 1370  ll
+ 1371  cd AWS_DEVOPS/
+ 1372  ll
+ 1373  mkdir my-terraform-module
+ 1374  cd my-terraform-module/
+ 1375  ll
+ 1376  code .
+ 1377  terraform main.tf fmt
+ 1378  terraform fmt main.tf 
+ 1379  terraform fmt 
+ 1380  terraform init
+ 1381  ll
+ 1382  chmod 400 id_ed25519
+ 1383  ll
+ 1384  chmod 777 id_ed25519
+ 1385  ll
+ 1386  chmod 777 id_ed25519.pub 
+ 1387  ll
+ 1388  terraform init
+ 1389  terraform plan
+ 1390  terraform validate
+ 1391  cd ../
+ 1392  mkdir my-terraform-project 
+ 1393  cd my-terraform-project
+ 1394  code .
+ 1395  terraform init
+ 1396  terraform plan
+ 1397  cd ../my-terraform-module/
+ 1398  ll
+ 1399  code .
+ 1400  cd ../my-terraform-project/
+ 1401  ll
+ 1402  terraform plan
+ 1403  terraform apply
+ 1404  ssh 44.245.216.40
+ 1405  ssh ubuntu@44.245.216.40
+ 1406  ssh -i id ubuntu@44.245.216.40
+ 1407  terraform destory
+ 1408  terraform destroy
+ 1409  terraform fmt
+ 1410  terraform apply
+ 1411  terraform destroy
+ 1412  terraform show
+ 1413  terraform show module.example_instance.aws_instance.example
+ 1414  exit
+ 1415  ll *.git
+ 1416  git fetch 
+ 1417  cd MY_TERRAFROM/
+ 1418  ll
+ 1419  cd .git/
+ 1420  ll
+ 1421  cd ../
+ 1422  rm -rf .git
+ 1423  git init
+ 1424  git remote add origin https://github.com/Anand24dsu/Terraform_Devops.git
+ 1425  git branch main
+ 1426  git branch master main
+ 1427  git branch -master main
+ 1428  git branch --master main
+ 1429  git branch -m master main
+ 1430  git init 
+ 1431  git init
+ 1432  git add .
+ 1433  git init 
+ 1434  git add
+ 1435  git add .
+ 1436  rm -f .git/index.lock
+ 1437  git add .
+ 1438  git commit -m "anand"
+ 1439  git push
+ 1440  git push --set-upstream origin main
+ 1441  git push origin main
+ 1442  git push -u origin main
+ 1443  git fetch origin main
+ 1444  ll
+ 1445  git add .
+ 1446  git commit -m "anand"
+ 1447  git push
+ 1448  git push -u origin main
+ 1449  git fetch origin main
+ 1450  git push
+ 1451  git push --set-upstream origin main
+ 1452  git config --global push.autoSetupRemote true
+ 1453  git push --set-upstream origin main
+ 1454  git pull
+ 1455  git push
+ 1456  cd MY_TERRAFROM/AWS_DEVOPS/
+ 1457  cd EC2/
+ 1458  ssh -i id_ed25519 ubuntu@34.211.100.138
+ 1459  vi /etc/hostname 
+ 1460  sudo reboot 
+ 1461  ssh -i id_ed25519 ubuntu@34.211.100.138
+ 1462  cd MY_TERRAFROM/
+ 1463  cd AWS_DEVOPS/
+ 1464  ll
+ 1465  mkdir aws_ami_data
+ 1466  cd aws_ami_data/
+ 1467  ll
+ 1468  code .
+ 1469  terraform init
+ 1470  terraform plan
+ 1471  cd 
+ 1472  cd .ssh/
+ 1473  ll
+ 1474  l
+ 1475  ssh -i ~/.ssh/id_ed25519.pub  ubuntu@35.88.24.190
+ 1476  ssh -i ~/.ssh/id_ed25519  ubuntu@35.88.24.190
+ 1477  terraform fmt
+ 1478  terraform plan
+ 1479  terraform apply
+ 1480  terraform destriy
+ 1481  terraform destroy
+ 1482  terraform apply
+ 1483  terraform destroy
+ 1484  terraform apply
+ 1485  terraform destroy
+ 1486  terraform apply
+ 1487  ssh ubuntu@35.88.24.190
+ 1488  ssh -i  ubuntu@35.88.24.190
+ 1489  sudo su
+ 1490  ssh -i ~/.ssh/id_ed25519 ubuntu@35.88.24.190
+ 1491  ssh -i ~/.ssh/id_ed25519.p ubuntu@35.88.24.190
+ 1492  ssh -i "id_rsa" ec2-user@ec2-35-88-24-190.us-west-2.compute.amazonaws.com
+ 1493  terraform destroy
+ 1494  exit
+ 1495  cd MY_TERRAFROM/
+ 1496  cd AWS_DEVOPS/
+ 1497  ll
+ 1498  mkdir count.index
+ 1499  cd count.index/
+ 1500  ll
+ 1501  code .
+ 1502  cd ../EC2/
+ 1503  cat main.tf 
+ 1504  terraform init
+ 1505  terraform plan
+ 1506  terraform apply
+ 1507  terraform destroy
+ 1508  terraform apply
+ 1509  terraform destroy
+ 1510  terraform apply
+ 1511  terraform destroy
+ 1512  terraform apply
+ 1513  terraform destroy
+ 1514  terraform apply
+ 1515  exit\
+ 1516  printenv > "/tmp/tmp-1265PGDYMZD6y4Xv.txt"
+ 1517  terraform init
+ 1518  terraform plan
+ 1519  terraform apply
+ 1520  terraform destory
+ 1521  terraform destroy
+ 1522  terraform apply
+ 1523  terraform destroy
+ 1524  terraform apply
+ 1525  terraform destroy
+ 1526  terraform apply
+ 1527  terraform destroy
+ 1528  cd MY_TERRAFROM/AWS_DEVOPS/
+ 1529  ll
+ 1530  mkdir for_each
+ 1531  cd for_each/
+ 1532  ll
+ 1533  code .
+ 1534  cd ../count.index/
+ 1535  cat main.tf 
+ 1536  c
+ 1537  cd MY_TERRAFROM/
+ 1538  cd AWS_DEVOPS/
+ 1539  ll
+ 1540  cd provisioner/
+ 1541  ll
+ 1542  code .
+ 1543  cd ../EC2/
+ 1544  ll
+ 1545  code .
+ 1546  cd ../
+ 1547  ll
+ 1548  cd count.index/
+ 1549  code .
+ 1550  cd ..
+ 1551  cd for_each/
+ 1552  code .
+ 1553  ifconfig
+ 1554  netstat
+ 1555  netstat -a
+ 1556  netstat -na
+ 1557  cd
+ 1558  mkdir ansible_practice
+ 1559  cd ansible_practice/
+ 1560  sudo apt install podman
+ 1561  podman -help
+ 1562  podman network list
+ 1563  podman network --help
+ 1564  podman network ls
+ 1565  podman images
+ 1566  podman image -help
+ 1567  clear
+ 1568  docker images
+ 1569  docker --help
+ 1570  docker pull mysql
+ 1571  docker images
+ 1572  docker images rm 5568fddd4f66
+ 1573  docker rm 5568fddd4f66
+ 1574  docker images rm 5568fddd4f6
+ 1575  docker images
+ 1576  docker rm --help
+ 1577  docker rm mysql
+ 1578  docker rmi 5568fddd4f66
+ 1579  docker images
+ 1580  docker --help
+ 1581  docker ps
+ 1582  docker inspect mysql
+ 1583  docker rm mysql
+ 1584  docker pull mysql
+ 1585  docker inspect mysql
+ 1586  docker ps
+ 1587  docker images
+ 1588  docker rmi 5568fddd4f66
+ 1589  docker images
+ 1590  docker pull rapidfort/yugabyte
+ 1591  docker images
+ 1592  docker rmi 8cae5031bc00
+ 1593  docker pull yugabytedb/yugabyte:2024.2.2.0-b70
+ 1594  docker images
+ 1595  docker ps -a
+ 1596  docker ps 
+ 1597  docker --help
+ 1598  docker images
+ 1599  docker rmi afd5a1146637
+ 1600  docker images
+ 1601  docker inspect afd5a1146637
+ 1602  docker pull yugabytedb/yugabyte:2024.2.2.0-b70
+ 1603  docker inspect afd5a1146637
+ 1604  docker --help
+ 1605  docker pull yugabytedb/yugabyte:2024.2.2.0-b70
+ 1606  docker run yugabytedb/yugabyte:2024.2.2.0-b70 
+ 1607  docker run -d --name yb-tserver            -p 7200:7200 -p 9100:9100 -p 5433:5433 -p 9042:9042            yugabytedb/yugabyte:2024.2.2.0-b70 bin/yugabyted start            --base_dir=/home/yugabyte --daemon=false
+ 1608  docker images
+ 1609  docker pull nginx
+ 1610  docker images 
+ 1611  docker inspect  b52e0b094bc0
+ 1612  docker run -itd -P sleep 1000
+ 1613  docker exec -it d25
+ 1614  docker exec --help
+ 1615  docker ps
+ 1616  docker run nginx:latest 
+ 1617  docker run nginx:latest
+ 1618  docker run nginx:latest sleep 1000
+ 1619  docker run nginx:latest sleep 1
+ 1620  docker ps -a
+ 1621  docker exec a7d11fdd68af sleep 10
+ 1622  docker exec lucid_joliot 
+ 1623  docker images
+ 1624  docker kill a7d11fdd68af
+ 1625  # Stop all containers running nginx:latest
+ 1626  docker ps -a -q --filter "ancestor=nginx:latest" | xargs -I {} docker stop {}
+ 1627  # Remove all containers running nginx:latest
+ 1628  docker ps -a -q --filter "ancestor=nginx:latest" | xargs -I {} docker rm {}
+ 1629  docker ps -a 
+ 1630  # Stop all containers with the specified IDs
+ 1631  docker stop e94583c45703 779653a4bcce
+ 1632  # Remove all containers with the specified IDs
+ 1633  docker rm e94583c45703 779653a4bcce
+ 1634  docker ps -a 
+ 1635  docker iamges
+ 1636  docker images
+ 1637  docker rmi afd5a1146637 b52e0b094bc0
+ 1638  docker images
+ 1639  ll
+ 1640  l
+ 1641  ll
+ 1642  ls -lter
+ 1643  ls -ltr
+ 1644  mkdir first
+ 1645  cd first/
+ 1646  ll
+ 1647  cd ../
+ 1648  docker pull nginx
+ 1649  docker run -d -P nginx
+ 1650  docker ps
+ 1651  docker exec -d -P nginx sleep 10
+ 1652  docker exec -it  /bin/bash
+ 1653  docker exec -it 06cf06634af8  /bin/bash
+ 1654  docker inspect 06cf06634af8
+ 1655  docker help
+ 1656  docker ps
+ 1657  docker ps -a
+ 1658  docker ps 
+ 1659  docker inspect 06cf06634af8
+ 1660  docker ps 
+ 1661  docker ps -a
+ 1662  docker kill --help
+ 1663  docker run -d -p 50000:80 nginx
+ 1664  docker ps -a
+ 1665  docker run -d -P nginx
+ 1666  docker ps -a
+ 1667  docker kill *
+ 1668  docker kill .
+ 1669  docker kill 255952393ef0
+ 1670  docker ps -a
+ 1671  docker ps 
+ 1672  docker kill 06cf06634af8
+ 1673  docker kill a40b6ce54952
+ 1674  docker ps
+ 1675  docker ps -a
+ 1676  docker images
+ 1677  docker rmi b52e0b094bc0
+ 1678  docker ps -a
+ 1679  docker rmi b52e0b094bc0
+ 1680  docker rmi -fb52e0b094bc0
+ 1681  docker rmi -f b52e0b094bc0
+ 1682  docker ps -a
+ 1683  docker images
+ 1684  cd first/
+ 1685  docker images
+ 1686  docker ps -a
+ 1687  # Stop all containers with the specified IDs (if they were still running)
+ 1688  docker stop 255952393ef0 a40b6ce54952 06cf06634af8
+ 1689  # Remove all containers with the specified IDs
+ 1690  docker rm 255952393ef0 a40b6ce54952 06cf06634af8
+ 1691  docker ps -a
+ 1692  ll
+ 1693  cd ..
+ 1694  cd first/
+ 1695  docker network list
+ 1696  docker ps -a
+ 1697  awk
+ 1698  docker echo "gagana"
+ 1699  docker run echo "gagana"
+ 1700  docker run -it  echo "gagana"
+ 1701  ansible
+ 1702  cat /etc/issue
+ 1703  lsb_release -a
+ 1704  hostnamectl 
+ 1705  hostname
+ 1706  hostnamedocker run -it  echo "gagana"
+ 1707  Unable to find image 'echo:latest' locally
+ 1708  docker: Error response from daemon: pull access denied for echo, repository does not exist or may require 'docker login': denied: requested access to the resource is denied.
+ 1709  See 'docker run --help'.c
+ 1710  lsb_release -a
+ 1711  ls
+ 1712  cat /etc/os-release 
+ 1713  ansible -m ping
+ 1714  docker run -it  echo "gagana"
+ 1715  Unable to find image 'echo:latest' locally
+ 1716  docker: Error response from daemon: pull access denied for echo, repository does not exist or may require 'docker lo
+ 1717  date
+ 1718  ipconfig
+ 1719  ifconfig
+ 1720  cd 
+ 1721  vi /etc/host.conf 
+ 1722  vi /etc/host
+ 1723  vi /etc/hostname 
+ 1724  l;
+ 1725  cd ansible_practice/
+ 1726  l;
+ 1727  l; ps ;
+ 1728  ls ; ls -ltr; ps -a ; 
+ 1729  histroy
+ 1730  history
+ 1731  ansible --help
+ 1732  cp /mnt/c/Users/Dell/Downloads/envsetup.sh .
+ 1733  ll
+ 1734  rm -rf first/
+ 1735  ll
+ 1736  bash envsetup.sh 
+ 1737  ssh -i root@192.168.1.101
+ 1738  ssh  root@192.168.1.101
+ 1739  ssh  root@192.168.1.102
+ 1740  ssh  root@192.168.1.103
+ 1741  ll
+ 1742  docker ps -a
+ 1743  docker images
+ 1744  docker inspect alpine ubuntu cetos
+ 1745  docker images
+ 1746  docker inspect alpine ubuntu centos
+ 1747  docker network list
+ 1748  docker network ls
+ 1749  docker network ps
+ 1750  docker container ls
+ 1751  code .
+ 1752  ssh  root@192.168.1.101
+ 1753  ssh  root@192.168.1.102
+ 1754  ssh  root@192.168.1.103
+ 1755  hostnamectl 
+ 1756  cd ansible_practice/
+ 1757  ll
+ 1758  docker ps
+ 1759  docker --help
+ 1760  ansible -m ping -i iniventory.ini  all
+ 1761  ansible -m ping -i iniventory.ini  all 192.168.1.101
+ 1762  ansible all -i inventory.ini -m ping
+ 1763  ansible -m ping -i iniventory.ini all 192.168.1.102
+ 1764  ansible -m setup -i iniventory.ini all
+ 1765  ansible -m setup -i iniventory.ini all 192.168.1.102
+ 1766  ansible -m setup -i iniventory.ini all 192.168.1.102
+ 1767  ansible -m setup -i iniventory.ini all
+ 1768  ansible -m ping -i iniventory.ini all
+ 1769  ll
+ 1770  pip install ansible
+ 1771  python3 -m venv myenv
+ 1772  .\myenv\Scripts\activate
+ 1773  ll
+ 1774  ansible -inventory -i iniventory.ini all
+ 1775  ansible all -i inventory.ini -m ping
+ 1776  ansible-inventory -i inventory.ini --list
+ 1777  ansible-inventory -i inventory.ini all
+ 1778  ansible-inventory -i inventory.ini --list
+ 1779  ansible-inventory -i inventory.ini
+ 1780  ansible-inventory -i inventory.ini --list
+ 1781  ansible-inventory -i iniventory.ini --list
+ 1782  ssh-keygen -f '/home/dopadm/.ssh/known_hosts' -R '192.168.1.103'
+ 1783  ssh-keygen -f '/home/dopadm/.ssh/known_hosts' -R '192.168.1.101'
+ 1784  ssh-keygen -f '/home/dopadm/.ssh/known_hosts' -R '192.168.1.102'
+ 1785  ansible -m ping -i iniventory.ini all
+ 1786  cd /etc/
+ 1787  mkdir ansible
+ 1788  sudo mkdir ansible
+ 1789  cd  ansible
+ 1790  code .
+ 1791  ll
+ 1792  vi ansible.cfg
+ 1793  ll
+ 1794  pws
+ 1795  pwd
+ 1796  cd 
+ 1797  cd ansible_practice/
+ 1798  ll
+ 1799  ansible -m ping -i iniventory.ini all
+ 1800  cd /etc/
+ 1801  cd ansible/
+ 1802  ll
+ 1803  code .
+ 1804  sudo code .
+ 1805  vi ansible.cfg
+ 1806  sudo su
+ 1807  cd
+ 1808  cd ansible_practice/
+ 1809  ansible -m ping -i iniventory.ini all
+ 1810  cd /etc/ansible/
+ 1811  ll
+ 1812  cat ansible.cfg 
+ 1813  cd 
+ 1814  cd ansible_practice/
+ 1815  ll
+ 1816  rm myenv/
+ 1817  rm myenv/.
+ 1818  rm -rf myenv/.
+ 1819  rm -rf myenv
+ 1820  ll
+ 1821  python -m venv myenv
+ 1822  # Activate the virtual environment
+ 1823  myenv\Scripts\activate
+ 1824  #ll
+ 1825  ll
+ 1826  python -m venv myenv
+ 1827  python3 -m venv myenv
+ 1828  myenv\Scripts\activate
+ 1829  source myenv/bin/activate
+ 1830  ll
+ 1831  cd practice/
+ 1832  cd
+ 1833  cd /etc/ansible/
+ 1834  sudo cp /home/dopadm/
+ 1835  sudo cp /home/dopadm/ansible_practice/iniventory.ini .
+ 1836  sudo vi host
+ 1837  exit
+ 1838  cd ansible_practice/
+ 1839  ansible -m ping -i inventory.ini -u root all
+ 1840  sudo su
+ 1841  cd ansible_practice/
+ 1842  ansible -m ping -i iniventory.ini all
+ 1843  cd 
+ 1844  cd .ssh/
+ 1845  ll
+ 1846  cat known_hosts
+ 1847  cat known_hosts.old 
+ 1848  cd 
+ 1849  cd ansible_practice/
+ 1850  ll
+ 1851  lls
+ 1852  pip install ansible
+ 1853  python 
+ 1854  python 3
+ 1855  python3
+ 1856  ansible host -m ping
+ 1857  ansible host -m ping -i
+ 1858  ansible host -m ping  all
+ 1859  ansible host -m ping  
+ 1860  ansible all -m ping
+ 1861  ansible-inventory  --list
+ 1862  ansible all -m ping -i iniventory.ini 
+ 1863  ansible all -m ping -i iniventory.ini all
+ 1864  ansible all -m ping -i iniventory.ini.
+ 1865  ansible all -m ping -i iniventory.ini 
+ 1866  ll
+ 1867  ansible myhosts -m ping -i inventory.ini
+ 1868  ansible host -m ping -i inventory.ini
+ 1869  ansible hosts -m ping -i inventory.ini
+ 1870  ansible host -m ping -i inventory.ini
+ 1871  ansible host -m ping -i inventory.ini all
+ 1872  exit
+ 1873  cd
+ 1874  cd ansible_practice/
+ 1875  ll
+ 1876  ansible-inventory -i inventory.ini --list
+ 1877  ansible-inventory -i iniventory.ini --list
+ 1878  code 
+ 1879  code .
+ 1880  ansible-inventory  --list
+ 1881  ansible-inventory -i iniventory.ini --list
+ 1882  ansible-inventory -i inventory.ini 
+ 1883  ansible-inventory -i inventory.ini 
+ 1884  ansible-inventory -i inventory.ini --list
+ 1885  ansible myhosts -m ping -i inventory.ini
+ 1886  ansible host -m ping -i inventory.ini
+ 1887  ansible host -m ping -i inventory.ini 
+ 1888  code .
+ 1889  cd /etc/ansible/
+ 1890  ll
+ 1891  cd ../
+ 1892  cd 
+ 1893  cd ansible_practice/
+ 1894  ll
+ 1895  ansible host -m ping -i inventory.ini 
+ 1896  ansible host -m ping -i inventory.ini all
+ 1897  ansible -m inventory.ini all
+ 1898  ansible -m ping -i inventory.ini -u root all
+ 1899  docker exec -it /bin/bash
+ 1900  docker exec -it vm2
+ 1901  ssh root@192.168.1.102
+ 1902  ansible -m ping -i inventory.ini -u root all
+ 1903  exit
+ 1904  ansible 192.168.1.102 -m ping
+ 1905  sudo vi /etc/ansible/host 
+ 1906  ansible -m ping -i inventory.ini -u root all
+ 1907  ansible 192.168.1.102 -m ping -vvv
+ 1908  code .
+ 1909  ansible -m ping -i group.yml 
+ 1910  ansible -m ping -i group.yml db
+ 1911  ansible -m ping -i group.yml app
+ 1912  ansible -m ping -i group.yml db
+ 1913  ansible -m ping -i group.yml web
+ 1914  ansible -m ping -i inventory.ini -u root all
+ 1915  ssh root@192.168.1.102
+ 1916  ansible -m ping -i inventory.ini -u root all
+ 1917  ssh root@192.168.1.102
+ 1918  sudo vi /etc/host
+ 1919  sudo vi /etc/ansible/host 
+ 1920  ansible -m ping -i inventory.ini -u root all
+ 1921  ssh root@192.168.1.102
+ 1922  ansible -m ping -i inventory.ini -u root all
+ 1923  ssh root@192.168.1.102
+ 1924  ansible -m ping -i inventory.ini -u root all
+ 1925  ssh root@192.168.1.102
+ 1926  exit
+ 1927  /bin/python3 /home/dopadm/.vscode-server/extensions/ms-python.python-2025.0.0-linux-x64/python_files/printEnvVariablesToFile.py /home/dopadm/.vscode-server/extensions/ms-python.python-2025.0.0-linux-x64/python_files/deactivate/bash/envVars.txt
+ 1928  pip install python-terraform
+ 1929  /home/dopadm/terrafrom_withpy/.venv/bin/python /home/dopadm/terrafrom_withpy/main.py
+ 1930  pip install python-terraform
+ 1931  /home/dopadm/terrafrom_withpy/.venv/bin/python /home/dopadm/terrafrom_withpy/main.py
+ 1932  /home/dopadm/terrafrom_withpy/.venv/bin/python /home/dopadm/terrafrom_withpy/terraform_ec2.py
+ 1933  cd terrafrom_withpy/
+ 1934  pip install python-terraform
+ 1935  terraform init
+ 1936  exit
+ 1937  mkdir terrafrom_withpy
+ 1938  cd terrafrom_withpy/
+ 1939  code .
+ 1940  source .venv/bin/activate
+ 1941  python3 terraform_ec2.py 
+ 1942  terraform init
+ 1943  exit
+ 1944  pip install terraformpy
+ 1945  mkdir tfpy
+ 1946  cd tf
+ 1947  cd tfpy/
+ 1948  code .
+ 1949  pip install terraformpy
+ 1950  brew install terraform  # (Mac) OR sudo apt install terraform (Linux)
+ 1951  ll
+ 1952  source .venv/bin/activate
+ 1953  pip install terraformpy
+ 1954  ssh-keygen -t rsa -b 4096 -f my-key -N ""
+ 1955  ll
+ 1956  python manage.py
+ 1957  pip install json
+ 1958  pip install jsoncode
+ 1959  pip install subprocess
+ 1960  pip install -r req.txt 
+ 1961  pip install jsonlib
+ 1962  pip install subprocess.run
+ 1963  pip install jsonlib
+ 1964  pip install ujson  # or orjson
+ 1965  pip install jsonlib
+ 1966  pip install json2json
+ 1967  pip install json2python-models
+ 1968  pip install python-easy-json
+ 1969  pip install subprocess32
+ 1970  python manage.py
+ 1971  python3 manage.py 
+ 1972  python3 infra
+ 1973  python3 infra.py 
+ 1974  python3 manage.py 
+ 1975  python infra.py
+ 1976  python3 infra.py
+ 1977  terraform init
+ 1978  aws ec2 describe-security-groups --group-names allow_ssh --region us-west-2
+ 1979  terraformpy > main.tf.json
+ 1980  python3 infra
+ 1981  python3 infra.py 
+ 1982  terraformpy > main.tf.json
+ 1983  terraform init
+ 1984  docker ps -a
+ 1985  docker ps 
+ 1986  docker start b5bf5fe090cc
+ 1987  docker start d60
+ 1988  docker start b5b
+ 1989  docker ps
+ 1990  docker start 52
+ 1991  docker ps
+ 1992  docker stop 52 d60 b5b
+ 1993  docker ps
+ 1994  cd ansible_practice/
+ 1995  ll
+ 1996  cat envsetup.sh 
+ 1997  code .
+ 1998  cat envsetup.sh 
+ 1999  bash envsetup.sh 
+ 2000  docker kill
+ 2001  docker kill vm1 vm2 vm3
+ 2002  docker rm vm1 vm2 vm3
+ 2003  bash envsetup.sh 
+ 2004  ssh root@192.168.1.101
+ 2005  vi /home/dopadm/.ssh/known_hosts
+ 2006  history |grep "ssh"
+ 2007  ssh root@192.168.1.101
+ 2008  ssh root@192.168.1.102
+ 2009  ssh root@192.168.1.103
+ 2010  ansible -m ping all
+ 2011  ansible -m ping inventory.ini all
+ 2012  ansible -m ping -i inventory.ini all
+ 2013  ssh root@192.168.1.102
+ 2014  ls
+ 2015  ansible -m ping -i inventory.ini all
+ 2016  ls
+ 2017* 
+ 2018  ansible -m ping -i inventory.ini all
+ 2019  ansible -m user -a 'name=user1' all
+ 2020  ansible -m user -i inventory.ini -a 'name=user1' all
+ 2021  ansible -m user -a "name=user1" all
+ 2022  ansible -m -i inventory.ini user -a "name=user1" all
+ 2023  ansible -m user -a 'name=user1 update_password=always password={{user1pwd|password_hash('sha512')}}'
+ 2024  ansible -m -i inventory.ini user -a 'name=user1 update_password=always password={{user1pwd|password_hash('sha512')}}'
+ 2025  ansible -m user -i inventory.ini -a "name=user1 update_password=always password='{{ user1pwd | password_hash('sha512') }}'"
+ 2026  ansible -m user -i inventory.ini -a "name=user1 update_password=always password='{{ user1pwd | password_hash('sha512') }}'" all
+ 2027  ansible -m -i inventory.ini user -a 'name=user1 update_password=always password={{user1pwd|password_hash('sha512')}}' all
+ 2028  ansible -m user -i inventory.ini -a 'name=user1 update_password=always password={{user1pwd|password_hash('sha512')}}' all
+ 2029  ansible -m user -i inventory.ini -a 'name=user1 update_password=always password={{user1pwd|password_hash("sha512")}}' all
+ 2030  ansible -m user -i inventory.ini -a "name=user1 update_password=always password={{ user1pwd | password_hash('sha512') }}" all
+ 2031  ansible -m user -i inventory.ini -a 'name=user1 update_password=always password={{user1pwd|password_hash("sha512")}}' all
+ 2032  ansible -m user -i inventory.ini -a "name=user1 update_password=always password={{'user1pwd'|passwo
+rd_hash('sha512')}}" all
+ 2033  ansible -m user -i inventory.ini -a "name=user1 update_password=always password={{'user1pwd'|passwo
+rd_hash('sha512')}}" all
+ 2034  ansible all -m user -i inventory.ini -a "name=user1 update_password=always password={{ 'user1pwd' | password_hash('sha512') }}"
+ 2035  ssh user1@192.168.1.101
+ 2036  ssh user1@192.168.1.102
+ 2037  ssh user3@192.168.1.102
+ 2038  ssh user2@192.168.1.102
+ 2039  ssh user1@192.168.1.102
+ 2040  ssh root@192.168.1.102
+ 2041  ssh user1@192.168.1.102
+ 2042  ssh user1@192.168.1.103
+ 2043  cd /etc/ansible/
+ 2044  ll
+ 2045  cat host 
+ 2046  sudo vi host 
+ 2047  ll
+ 2048  chmod 777 ansible.cfg 
+ 2049  sudo chmod 777 ansible.cfg 
+ 2050  ll
+ 2051  ansible -m ping all
+ 2052  cd .
+ 2053  cd 
+ 2054  cd ansible_practice/
+ 2055  ll
+ 2056  ansible -m ping all
+ 2057  ansible -m ping host all
+ 2058  cd /etc/ansible/
+ 2059  ll
+ 2060  mv host hosts
+ 2061  sudo mv host hosts
+ 2062  ll
+ 2063  cat hosts 
+ 2064  cd
+ 2065  cd ansible_practice/
+ 2066  ansible -m ping all
+ 2067  history |cat 
+ 2068  history |cat >>hel.txt
+ 1326  git tag
+ 1327  git lfs install
+ 1328  git lfs track "*.largefileextension"
+ 1329  git add .gitattributes
+ 1330  git commit -m "Track large files with Git LFS"
+ 1331  git push
+ 1332  sudo apt-get install git-lfs
+ 1333  git lfs track "*.largefileextension"
+ 1334  git add .gitattributes
+ 1335  git commit -m "Track large files with Git LFS"
+ 1336  git push --set-upstream origin main
+ 1337  git lfs --version
+ 1338  git config --global http.proxy http://proxyuser:proxypassword@proxyaddress:proxyport
+ 1339  git config --global https.proxy https://proxyuser:proxypassword@proxyaddress:proxyport
+ 1340  git push --set-upstream origin main
+ 1341  git push
+ 1342  git push --set-upstream origin main
+ 1343  git config --global --unset http.proxy
+ 1344  git config --global --unset https.proxy
+ 1345  git push --set-upstream origin main
+ 1346  cd MY_TERRAFROM/AWS_D
+ 1347  cd MY_TERRAFROM/AWS_DEVOPS/
+ 1348  ll
+ 1349  cd EC2/
+ 1350  ll
+ 1351  cat main.tf 
+ 1352  cd 
+ 1353  ssh-keygen
+ 1354  cd
+ 1355  cd .ssh/
+ 1356  ll
+ 1357  cp id_ed25519 id_ed25519.pub  ~/
+ 1358  cp id_ed25519 id_ed25519.pub  ~/MY_TERRAFROM/AWS_DEVOPS/my-terraform-module/ .
+ 1359  cp -r id_ed25519 id_ed25519.pub  ~/MY_TERRAFROM/AWS_DEVOPS/my-terraform-module/ .
+ 1360  cp -r id_ed25519 id_ed25519.pub ~/MY_TERRAFROM/AWS_DEVOPS/my-terraform-module/
+ 1361  cd 
+ 1362  cd MY_TERRAFROM/AWS_D
+ 1363  cd MY_TERRAFROM/AWS_DEVOPS/my-terraform-module/
+ 1364  ll
+ 1365  ssh 44.245.216.40
+ 1366  ssh ubuntu@44.245.216.40
+ 1367  ssh -i id_ed25519 ubuntu@44.245.216.40
+ 1368  exit
+ 1369  cd MY_TERRAFROM/
+ 1370  ll
+ 1371  cd AWS_DEVOPS/
+ 1372  ll
+ 1373  mkdir my-terraform-module
+ 1374  cd my-terraform-module/
+ 1375  ll
+ 1376  code .
+ 1377  terraform main.tf fmt
+ 1378  terraform fmt main.tf 
+ 1379  terraform fmt 
+ 1380  terraform init
+ 1381  ll
+ 1382  chmod 400 id_ed25519
+ 1383  ll
+ 1384  chmod 777 id_ed25519
+ 1385  ll
+ 1386  chmod 777 id_ed25519.pub 
+ 1387  ll
+ 1388  terraform init
+ 1389  terraform plan
+ 1390  terraform validate
+ 1391  cd ../
+ 1392  mkdir my-terraform-project 
+ 1393  cd my-terraform-project
+ 1394  code .
+ 1395  terraform init
+ 1396  terraform plan
+ 1397  cd ../my-terraform-module/
+ 1398  ll
+ 1399  code .
+ 1400  cd ../my-terraform-project/
+ 1401  ll
+ 1402  terraform plan
+ 1403  terraform apply
+ 1404  ssh 44.245.216.40
+ 1405  ssh ubuntu@44.245.216.40
+ 1406  ssh -i id ubuntu@44.245.216.40
+ 1407  terraform destory
+ 1408  terraform destroy
+ 1409  terraform fmt
+ 1410  terraform apply
+ 1411  terraform destroy
+ 1412  terraform show
+ 1413  terraform show module.example_instance.aws_instance.example
+ 1414  exit
+ 1415  ll *.git
+ 1416  git fetch 
+ 1417  cd MY_TERRAFROM/
+ 1418  ll
+ 1419  cd .git/
+ 1420  ll
+ 1421  cd ../
+ 1422  rm -rf .git
+ 1423  git init
+ 1424  git remote add origin https://github.com/Anand24dsu/Terraform_Devops.git
+ 1425  git branch main
+ 1426  git branch master main
+ 1427  git branch -master main
+ 1428  git branch --master main
+ 1429  git branch -m master main
+ 1430  git init 
+ 1431  git init
+ 1432  git add .
+ 1433  git init 
+ 1434  git add
+ 1435  git add .
+ 1436  rm -f .git/index.lock
+ 1437  git add .
+ 1438  git commit -m "anand"
+ 1439  git push
+ 1440  git push --set-upstream origin main
+ 1441  git push origin main
+ 1442  git push -u origin main
+ 1443  git fetch origin main
+ 1444  ll
+ 1445  git add .
+ 1446  git commit -m "anand"
+ 1447  git push
+ 1448  git push -u origin main
+ 1449  git fetch origin main
+ 1450  git push
+ 1451  git push --set-upstream origin main
+ 1452  git config --global push.autoSetupRemote true
+ 1453  git push --set-upstream origin main
+ 1454  git pull
+ 1455  git push
+ 1456  cd MY_TERRAFROM/AWS_DEVOPS/
+ 1457  cd EC2/
+ 1458  ssh -i id_ed25519 ubuntu@34.211.100.138
+ 1459  vi /etc/hostname 
+ 1460  sudo reboot 
+ 1461  ssh -i id_ed25519 ubuntu@34.211.100.138
+ 1462  cd MY_TERRAFROM/
+ 1463  cd AWS_DEVOPS/
+ 1464  ll
+ 1465  mkdir aws_ami_data
+ 1466  cd aws_ami_data/
+ 1467  ll
+ 1468  code .
+ 1469  terraform init
+ 1470  terraform plan
+ 1471  cd 
+ 1472  cd .ssh/
+ 1473  ll
+ 1474  l
+ 1475  ssh -i ~/.ssh/id_ed25519.pub  ubuntu@35.88.24.190
+ 1476  ssh -i ~/.ssh/id_ed25519  ubuntu@35.88.24.190
+ 1477  terraform fmt
+ 1478  terraform plan
+ 1479  terraform apply
+ 1480  terraform destriy
+ 1481  terraform destroy
+ 1482  terraform apply
+ 1483  terraform destroy
+ 1484  terraform apply
+ 1485  terraform destroy
+ 1486  terraform apply
+ 1487  ssh ubuntu@35.88.24.190
+ 1488  ssh -i  ubuntu@35.88.24.190
+ 1489  sudo su
+ 1490  ssh -i ~/.ssh/id_ed25519 ubuntu@35.88.24.190
+ 1491  ssh -i ~/.ssh/id_ed25519.p ubuntu@35.88.24.190
+ 1492  ssh -i "id_rsa" ec2-user@ec2-35-88-24-190.us-west-2.compute.amazonaws.com
+ 1493  terraform destroy
+ 1494  exit
+ 1495  cd MY_TERRAFROM/
+ 1496  cd AWS_DEVOPS/
+ 1497  ll
+ 1498  mkdir count.index
+ 1499  cd count.index/
+ 1500  ll
+ 1501  code .
+ 1502  cd ../EC2/
+ 1503  cat main.tf 
+ 1504  terraform init
+ 1505  terraform plan
+ 1506  terraform apply
+ 1507  terraform destroy
+ 1508  terraform apply
+ 1509  terraform destroy
+ 1510  terraform apply
+ 1511  terraform destroy
+ 1512  terraform apply
+ 1513  terraform destroy
+ 1514  terraform apply
+ 1515  exit\
+ 1516  printenv > "/tmp/tmp-1265PGDYMZD6y4Xv.txt"
+ 1517  terraform init
+ 1518  terraform plan
+ 1519  terraform apply
+ 1520  terraform destory
+ 1521  terraform destroy
+ 1522  terraform apply
+ 1523  terraform destroy
+ 1524  terraform apply
+ 1525  terraform destroy
+ 1526  terraform apply
+ 1527  terraform destroy
+ 1528  cd MY_TERRAFROM/AWS_DEVOPS/
+ 1529  ll
+ 1530  mkdir for_each
+ 1531  cd for_each/
+ 1532  ll
+ 1533  code .
+ 1534  cd ../count.index/
+ 1535  cat main.tf 
+ 1536  c
+ 1537  cd MY_TERRAFROM/
+ 1538  cd AWS_DEVOPS/
+ 1539  ll
+ 1540  cd provisioner/
+ 1541  ll
+ 1542  code .
+ 1543  cd ../EC2/
+ 1544  ll
+ 1545  code .
+ 1546  cd ../
+ 1547  ll
+ 1548  cd count.index/
+ 1549  code .
+ 1550  cd ..
+ 1551  cd for_each/
+ 1552  code .
+ 1553  ifconfig
+ 1554  netstat
+ 1555  netstat -a
+ 1556  netstat -na
+ 1557  cd
+ 1558  mkdir ansible_practice
+ 1559  cd ansible_practice/
+ 1560  sudo apt install podman
+ 1561  podman -help
+ 1562  podman network list
+ 1563  podman network --help
+ 1564  podman network ls
+ 1565  podman images
+ 1566  podman image -help
+ 1567  clear
+ 1568  docker images
+ 1569  docker --help
+ 1570  docker pull mysql
+ 1571  docker images
+ 1572  docker images rm 5568fddd4f66
+ 1573  docker rm 5568fddd4f66
+ 1574  docker images rm 5568fddd4f6
+ 1575  docker images
+ 1576  docker rm --help
+ 1577  docker rm mysql
+ 1578  docker rmi 5568fddd4f66
+ 1579  docker images
+ 1580  docker --help
+ 1581  docker ps
+ 1582  docker inspect mysql
+ 1583  docker rm mysql
+ 1584  docker pull mysql
+ 1585  docker inspect mysql
+ 1586  docker ps
+ 1587  docker images
+ 1588  docker rmi 5568fddd4f66
+ 1589  docker images
+ 1590  docker pull rapidfort/yugabyte
+ 1591  docker images
+ 1592  docker rmi 8cae5031bc00
+ 1593  docker pull yugabytedb/yugabyte:2024.2.2.0-b70
+ 1594  docker images
+ 1595  docker ps -a
+ 1596  docker ps 
+ 1597  docker --help
+ 1598  docker images
+ 1599  docker rmi afd5a1146637
+ 1600  docker images
+ 1601  docker inspect afd5a1146637
+ 1602  docker pull yugabytedb/yugabyte:2024.2.2.0-b70
+ 1603  docker inspect afd5a1146637
+ 1604  docker --help
+ 1605  docker pull yugabytedb/yugabyte:2024.2.2.0-b70
+ 1606  docker run yugabytedb/yugabyte:2024.2.2.0-b70 
+ 1607  docker run -d --name yb-tserver            -p 7200:7200 -p 9100:9100 -p 5433:5433 -p 9042:9042            yugabytedb/yugabyte:2024.2.2.0-b70 bin/yugabyted start            --base_dir=/home/yugabyte --daemon=false
+ 1608  docker images
+ 1609  docker pull nginx
+ 1610  docker images 
+ 1611  docker inspect  b52e0b094bc0
+ 1612  docker run -itd -P sleep 1000
+ 1613  docker exec -it d25
+ 1614  docker exec --help
+ 1615  docker ps
+ 1616  docker run nginx:latest 
+ 1617  docker run nginx:latest
+ 1618  docker run nginx:latest sleep 1000
+ 1619  docker run nginx:latest sleep 1
+ 1620  docker ps -a
+ 1621  docker exec a7d11fdd68af sleep 10
+ 1622  docker exec lucid_joliot 
+ 1623  docker images
+ 1624  docker kill a7d11fdd68af
+ 1625  # Stop all containers running nginx:latest
+ 1626  docker ps -a -q --filter "ancestor=nginx:latest" | xargs -I {} docker stop {}
+ 1627  # Remove all containers running nginx:latest
+ 1628  docker ps -a -q --filter "ancestor=nginx:latest" | xargs -I {} docker rm {}
+ 1629  docker ps -a 
+ 1630  # Stop all containers with the specified IDs
+ 1631  docker stop e94583c45703 779653a4bcce
+ 1632  # Remove all containers with the specified IDs
+ 1633  docker rm e94583c45703 779653a4bcce
+ 1634  docker ps -a 
+ 1635  docker iamges
+ 1636  docker images
+ 1637  docker rmi afd5a1146637 b52e0b094bc0
+ 1638  docker images
+ 1639  ll
+ 1640  l
+ 1641  ll
+ 1642  ls -lter
+ 1643  ls -ltr
+ 1644  mkdir first
+ 1645  cd first/
+ 1646  ll
+ 1647  cd ../
+ 1648  docker pull nginx
+ 1649  docker run -d -P nginx
+ 1650  docker ps
+ 1651  docker exec -d -P nginx sleep 10
+ 1652  docker exec -it  /bin/bash
+ 1653  docker exec -it 06cf06634af8  /bin/bash
+ 1654  docker inspect 06cf06634af8
+ 1655  docker help
+ 1656  docker ps
+ 1657  docker ps -a
+ 1658  docker ps 
+ 1659  docker inspect 06cf06634af8
+ 1660  docker ps 
+ 1661  docker ps -a
+ 1662  docker kill --help
+ 1663  docker run -d -p 50000:80 nginx
+ 1664  docker ps -a
+ 1665  docker run -d -P nginx
+ 1666  docker ps -a
+ 1667  docker kill *
+ 1668  docker kill .
+ 1669  docker kill 255952393ef0
+ 1670  docker ps -a
+ 1671  docker ps 
+ 1672  docker kill 06cf06634af8
+ 1673  docker kill a40b6ce54952
+ 1674  docker ps
+ 1675  docker ps -a
+ 1676  docker images
+ 1677  docker rmi b52e0b094bc0
+ 1678  docker ps -a
+ 1679  docker rmi b52e0b094bc0
+ 1680  docker rmi -fb52e0b094bc0
+ 1681  docker rmi -f b52e0b094bc0
+ 1682  docker ps -a
+ 1683  docker images
+ 1684  cd first/
+ 1685  docker images
+ 1686  docker ps -a
+ 1687  # Stop all containers with the specified IDs (if they were still running)
+ 1688  docker stop 255952393ef0 a40b6ce54952 06cf06634af8
+ 1689  # Remove all containers with the specified IDs
+ 1690  docker rm 255952393ef0 a40b6ce54952 06cf06634af8
+ 1691  docker ps -a
+ 1692  ll
+ 1693  cd ..
+ 1694  cd first/
+ 1695  docker network list
+ 1696  docker ps -a
+ 1697  awk
+ 1698  docker echo "gagana"
+ 1699  docker run echo "gagana"
+ 1700  docker run -it  echo "gagana"
+ 1701  ansible
+ 1702  cat /etc/issue
+ 1703  lsb_release -a
+ 1704  hostnamectl 
+ 1705  hostname
+ 1706  hostnamedocker run -it  echo "gagana"
+ 1707  Unable to find image 'echo:latest' locally
+ 1708  docker: Error response from daemon: pull access denied for echo, repository does not exist or may require 'docker login': denied: requested access to the resource is denied.
+ 1709  See 'docker run --help'.c
+ 1710  lsb_release -a
+ 1711  ls
+ 1712  cat /etc/os-release 
+ 1713  ansible -m ping
+ 1714  docker run -it  echo "gagana"
+ 1715  Unable to find image 'echo:latest' locally
+ 1716  docker: Error response from daemon: pull access denied for echo, repository does not exist or may require 'docker lo
+ 1717  date
+ 1718  ipconfig
+ 1719  ifconfig
+ 1720  cd 
+ 1721  vi /etc/host.conf 
+ 1722  vi /etc/host
+ 1723  vi /etc/hostname 
+ 1724  l;
+ 1725  cd ansible_practice/
+ 1726  l;
+ 1727  l; ps ;
+ 1728  ls ; ls -ltr; ps -a ; 
+ 1729  histroy
+ 1730  history
+ 1731  ansible --help
+ 1732  cp /mnt/c/Users/Dell/Downloads/envsetup.sh .
+ 1733  ll
+ 1734  rm -rf first/
+ 1735  ll
+ 1736  bash envsetup.sh 
+ 1737  ssh -i root@192.168.1.101
+ 1738  ssh  root@192.168.1.101
+ 1739  ssh  root@192.168.1.102
+ 1740  ssh  root@192.168.1.103
+ 1741  ll
+ 1742  docker ps -a
+ 1743  docker images
+ 1744  docker inspect alpine ubuntu cetos
+ 1745  docker images
+ 1746  docker inspect alpine ubuntu centos
+ 1747  docker network list
+ 1748  docker network ls
+ 1749  docker network ps
+ 1750  docker container ls
+ 1751  code .
+ 1752  ssh  root@192.168.1.101
+ 1753  ssh  root@192.168.1.102
+ 1754  ssh  root@192.168.1.103
+ 1755  hostnamectl 
+ 1756  cd ansible_practice/
+ 1757  ll
+ 1758  docker ps
+ 1759  docker --help
+ 1760  ansible -m ping -i iniventory.ini  all
+ 1761  ansible -m ping -i iniventory.ini  all 192.168.1.101
+ 1762  ansible all -i inventory.ini -m ping
+ 1763  ansible -m ping -i iniventory.ini all 192.168.1.102
+ 1764  ansible -m setup -i iniventory.ini all
+ 1765  ansible -m setup -i iniventory.ini all 192.168.1.102
+ 1766  ansible -m setup -i iniventory.ini all 192.168.1.102
+ 1767  ansible -m setup -i iniventory.ini all
+ 1768  ansible -m ping -i iniventory.ini all
+ 1769  ll
+ 1770  pip install ansible
+ 1771  python3 -m venv myenv
+ 1772  .\myenv\Scripts\activate
+ 1773  ll
+ 1774  ansible -inventory -i iniventory.ini all
+ 1775  ansible all -i inventory.ini -m ping
+ 1776  ansible-inventory -i inventory.ini --list
+ 1777  ansible-inventory -i inventory.ini all
+ 1778  ansible-inventory -i inventory.ini --list
+ 1779  ansible-inventory -i inventory.ini
+ 1780  ansible-inventory -i inventory.ini --list
+ 1781  ansible-inventory -i iniventory.ini --list
+ 1782  ssh-keygen -f '/home/dopadm/.ssh/known_hosts' -R '192.168.1.103'
+ 1783  ssh-keygen -f '/home/dopadm/.ssh/known_hosts' -R '192.168.1.101'
+ 1784  ssh-keygen -f '/home/dopadm/.ssh/known_hosts' -R '192.168.1.102'
+ 1785  ansible -m ping -i iniventory.ini all
+ 1786  cd /etc/
+ 1787  mkdir ansible
+ 1788  sudo mkdir ansible
+ 1789  cd  ansible
+ 1790  code .
+ 1791  ll
+ 1792  vi ansible.cfg
+ 1793  ll
+ 1794  pws
+ 1795  pwd
+ 1796  cd 
+ 1797  cd ansible_practice/
+ 1798  ll
+ 1799  ansible -m ping -i iniventory.ini all
+ 1800  cd /etc/
+ 1801  cd ansible/
+ 1802  ll
+ 1803  code .
+ 1804  sudo code .
+ 1805  vi ansible.cfg
+ 1806  sudo su
+ 1807  cd
+ 1808  cd ansible_practice/
+ 1809  ansible -m ping -i iniventory.ini all
+ 1810  cd /etc/ansible/
+ 1811  ll
+ 1812  cat ansible.cfg 
+ 1813  cd 
+ 1814  cd ansible_practice/
+ 1815  ll
+ 1816  rm myenv/
+ 1817  rm myenv/.
+ 1818  rm -rf myenv/.
+ 1819  rm -rf myenv
+ 1820  ll
+ 1821  python -m venv myenv
+ 1822  # Activate the virtual environment
+ 1823  myenv\Scripts\activate
+ 1824  #ll
+ 1825  ll
+ 1826  python -m venv myenv
+ 1827  python3 -m venv myenv
+ 1828  myenv\Scripts\activate
+ 1829  source myenv/bin/activate
+ 1830  ll
+ 1831  cd practice/
+ 1832  cd
+ 1833  cd /etc/ansible/
+ 1834  sudo cp /home/dopadm/
+ 1835  sudo cp /home/dopadm/ansible_practice/iniventory.ini .
+ 1836  sudo vi host
+ 1837  exit
+ 1838  cd ansible_practice/
+ 1839  ansible -m ping -i inventory.ini -u root all
+ 1840  sudo su
+ 1841  cd ansible_practice/
+ 1842  ansible -m ping -i iniventory.ini all
+ 1843  cd 
+ 1844  cd .ssh/
+ 1845  ll
+ 1846  cat known_hosts
+ 1847  cat known_hosts.old 
+ 1848  cd 
+ 1849  cd ansible_practice/
+ 1850  ll
+ 1851  lls
+ 1852  pip install ansible
+ 1853  python 
+ 1854  python 3
+ 1855  python3
+ 1856  ansible host -m ping
+ 1857  ansible host -m ping -i
+ 1858  ansible host -m ping  all
+ 1859  ansible host -m ping  
+ 1860  ansible all -m ping
+ 1861  ansible-inventory  --list
+ 1862  ansible all -m ping -i iniventory.ini 
+ 1863  ansible all -m ping -i iniventory.ini all
+ 1864  ansible all -m ping -i iniventory.ini.
+ 1865  ansible all -m ping -i iniventory.ini 
+ 1866  ll
+ 1867  ansible myhosts -m ping -i inventory.ini
+ 1868  ansible host -m ping -i inventory.ini
+ 1869  ansible hosts -m ping -i inventory.ini
+ 1870  ansible host -m ping -i inventory.ini
+ 1871  ansible host -m ping -i inventory.ini all
+ 1872  exit
+ 1873  cd
+ 1874  cd ansible_practice/
+ 1875  ll
+ 1876  ansible-inventory -i inventory.ini --list
+ 1877  ansible-inventory -i iniventory.ini --list
+ 1878  code 
+ 1879  code .
+ 1880  ansible-inventory  --list
+ 1881  ansible-inventory -i iniventory.ini --list
+ 1882  ansible-inventory -i inventory.ini 
+ 1883  ansible-inventory -i inventory.ini 
+ 1884  ansible-inventory -i inventory.ini --list
+ 1885  ansible myhosts -m ping -i inventory.ini
+ 1886  ansible host -m ping -i inventory.ini
+ 1887  ansible host -m ping -i inventory.ini 
+ 1888  code .
+ 1889  cd /etc/ansible/
+ 1890  ll
+ 1891  cd ../
+ 1892  cd 
+ 1893  cd ansible_practice/
+ 1894  ll
+ 1895  ansible host -m ping -i inventory.ini 
+ 1896  ansible host -m ping -i inventory.ini all
+ 1897  ansible -m inventory.ini all
+ 1898  ansible -m ping -i inventory.ini -u root all
+ 1899  docker exec -it /bin/bash
+ 1900  docker exec -it vm2
+ 1901  ssh root@192.168.1.102
+ 1902  ansible -m ping -i inventory.ini -u root all
+ 1903  exit
+ 1904  ansible 192.168.1.102 -m ping
+ 1905  sudo vi /etc/ansible/host 
+ 1906  ansible -m ping -i inventory.ini -u root all
+ 1907  ansible 192.168.1.102 -m ping -vvv
+ 1908  code .
+ 1909  ansible -m ping -i group.yml 
+ 1910  ansible -m ping -i group.yml db
+ 1911  ansible -m ping -i group.yml app
+ 1912  ansible -m ping -i group.yml db
+ 1913  ansible -m ping -i group.yml web
+ 1914  ansible -m ping -i inventory.ini -u root all
+ 1915  ssh root@192.168.1.102
+ 1916  ansible -m ping -i inventory.ini -u root all
+ 1917  ssh root@192.168.1.102
+ 1918  sudo vi /etc/host
+ 1919  sudo vi /etc/ansible/host 
+ 1920  ansible -m ping -i inventory.ini -u root all
+ 1921  ssh root@192.168.1.102
+ 1922  ansible -m ping -i inventory.ini -u root all
+ 1923  ssh root@192.168.1.102
+ 1924  ansible -m ping -i inventory.ini -u root all
+ 1925  ssh root@192.168.1.102
+ 1926  exit
+ 1927  /bin/python3 /home/dopadm/.vscode-server/extensions/ms-python.python-2025.0.0-linux-x64/python_files/printEnvVariablesToFile.py /home/dopadm/.vscode-server/extensions/ms-python.python-2025.0.0-linux-x64/python_files/deactivate/bash/envVars.txt
+ 1928  pip install python-terraform
+ 1929  /home/dopadm/terrafrom_withpy/.venv/bin/python /home/dopadm/terrafrom_withpy/main.py
+ 1930  pip install python-terraform
+ 1931  /home/dopadm/terrafrom_withpy/.venv/bin/python /home/dopadm/terrafrom_withpy/main.py
+ 1932  /home/dopadm/terrafrom_withpy/.venv/bin/python /home/dopadm/terrafrom_withpy/terraform_ec2.py
+ 1933  cd terrafrom_withpy/
+ 1934  pip install python-terraform
+ 1935  terraform init
+ 1936  exit
+ 1937  mkdir terrafrom_withpy
+ 1938  cd terrafrom_withpy/
+ 1939  code .
+ 1940  source .venv/bin/activate
+ 1941  python3 terraform_ec2.py 
+ 1942  terraform init
+ 1943  exit
+ 1944  pip install terraformpy
+ 1945  mkdir tfpy
+ 1946  cd tf
+ 1947  cd tfpy/
+ 1948  code .
+ 1949  pip install terraformpy
+ 1950  brew install terraform  # (Mac) OR sudo apt install terraform (Linux)
+ 1951  ll
+ 1952  source .venv/bin/activate
+ 1953  pip install terraformpy
+ 1954  ssh-keygen -t rsa -b 4096 -f my-key -N ""
+ 1955  ll
+ 1956  python manage.py
+ 1957  pip install json
+ 1958  pip install jsoncode
+ 1959  pip install subprocess
+ 1960  pip install -r req.txt 
+ 1961  pip install jsonlib
+ 1962  pip install subprocess.run
+ 1963  pip install jsonlib
+ 1964  pip install ujson  # or orjson
+ 1965  pip install jsonlib
+ 1966  pip install json2json
+ 1967  pip install json2python-models
+ 1968  pip install python-easy-json
+ 1969  pip install subprocess32
+ 1970  python manage.py
+ 1971  python3 manage.py 
+ 1972  python3 infra
+ 1973  python3 infra.py 
+ 1974  python3 manage.py 
+ 1975  python infra.py
+ 1976  python3 infra.py
+ 1977  terraform init
+ 1978  aws ec2 describe-security-groups --group-names allow_ssh --region us-west-2
+ 1979  terraformpy > main.tf.json
+ 1980  python3 infra
+ 1981  python3 infra.py 
+ 1982  terraformpy > main.tf.json
+ 1983  terraform init
+ 1984  docker ps -a
+ 1985  docker ps 
+ 1986  docker start b5bf5fe090cc
+ 1987  docker start d60
+ 1988  docker start b5b
+ 1989  docker ps
+ 1990  docker start 52
+ 1991  docker ps
+ 1992  docker stop 52 d60 b5b
+ 1993  docker ps
+ 1994  cd ansible_practice/
+ 1995  ll
+ 1996  cat envsetup.sh 
+ 1997  code .
+ 1998  cat envsetup.sh 
+ 1999  bash envsetup.sh 
+ 2000  docker kill
+ 2001  docker kill vm1 vm2 vm3
+ 2002  docker rm vm1 vm2 vm3
+ 2003  bash envsetup.sh 
+ 2004  ssh root@192.168.1.101
+ 2005  vi /home/dopadm/.ssh/known_hosts
+ 2006  history |grep "ssh"
+ 2007  ssh root@192.168.1.101
+ 2008  ssh root@192.168.1.102
+ 2009  ssh root@192.168.1.103
+ 2010  ansible -m ping all
+ 2011  ansible -m ping inventory.ini all
+ 2012  ansible -m ping -i inventory.ini all
+ 2013  ssh root@192.168.1.102
+ 2014  ls
+ 2015  ansible -m ping -i inventory.ini all
+ 2016  ls
+ 2017* 
+ 2018  ansible -m ping -i inventory.ini all
+ 2019  ansible -m user -a 'name=user1' all
+ 2020  ansible -m user -i inventory.ini -a 'name=user1' all
+ 2021  ansible -m user -a "name=user1" all
+ 2022  ansible -m -i inventory.ini user -a "name=user1" all
+ 2023  ansible -m user -a 'name=user1 update_password=always password={{user1pwd|password_hash('sha512')}}'
+ 2024  ansible -m -i inventory.ini user -a 'name=user1 update_password=always password={{user1pwd|password_hash('sha512')}}'
+ 2025  ansible -m user -i inventory.ini -a "name=user1 update_password=always password='{{ user1pwd | password_hash('sha512') }}'"
+ 2026  ansible -m user -i inventory.ini -a "name=user1 update_password=always password='{{ user1pwd | password_hash('sha512') }}'" all
+ 2027  ansible -m -i inventory.ini user -a 'name=user1 update_password=always password={{user1pwd|password_hash('sha512')}}' all
+ 2028  ansible -m user -i inventory.ini -a 'name=user1 update_password=always password={{user1pwd|password_hash('sha512')}}' all
+ 2029  ansible -m user -i inventory.ini -a 'name=user1 update_password=always password={{user1pwd|password_hash("sha512")}}' all
+ 2030  ansible -m user -i inventory.ini -a "name=user1 update_password=always password={{ user1pwd | password_hash('sha512') }}" all
+ 2031  ansible -m user -i inventory.ini -a 'name=user1 update_password=always password={{user1pwd|password_hash("sha512")}}' all
+ 2032  ansible -m user -i inventory.ini -a "name=user1 update_password=always password={{'user1pwd'|passwo
+rd_hash('sha512')}}" all
+ 2033  ansible -m user -i inventory.ini -a "name=user1 update_password=always password={{'user1pwd'|passwo
+rd_hash('sha512')}}" all
+ 2034  ansible all -m user -i inventory.ini -a "name=user1 update_password=always password={{ 'user1pwd' | password_hash('sha512') }}"
+ 2035  ssh user1@192.168.1.101
+ 2036  ssh user1@192.168.1.102
+ 2037  ssh user3@192.168.1.102
+ 2038  ssh user2@192.168.1.102
+ 2039  ssh user1@192.168.1.102
+ 2040  ssh root@192.168.1.102
+ 2041  ssh user1@192.168.1.102
+ 2042  ssh user1@192.168.1.103
+ 2043  cd /etc/ansible/
+ 2044  ll
+ 2045  cat host 
+ 2046  sudo vi host 
+ 2047  ll
+ 2048  chmod 777 ansible.cfg 
+ 2049  sudo chmod 777 ansible.cfg 
+ 2050  ll
+ 2051  ansible -m ping all
+ 2052  cd .
+ 2053  cd 
+ 2054  cd ansible_practice/
+ 2055  ll
+ 2056  ansible -m ping all
+ 2057  ansible -m ping host all
+ 2058  cd /etc/ansible/
+ 2059  ll
+ 2060  mv host hosts
+ 2061  sudo mv host hosts
+ 2062  ll
+ 2063  cat hosts 
+ 2064  cd
+ 2065  cd ansible_practice/
+ 2066  ansible -m ping all
+ 2067  history |cat 
+ 2068  history |cat >>hel.txt
+ 2069  ll
+ 2070  cat hel.txt 
+ 2071  ansible all -m user  -a "name=user1 update_password=always password={{ 'anand' | password_hash('sha512') }}"
+ 2072  ssh user1@192.168.1.101
+ 2073  ssh user1@192.168.1.102
+ 2074  python3
+ 2075  mkdir playbook
+ 2076  cd playbook/
+ 2077  code .
+ 2078  ansible-playbook -i inventory.ini playbook.yaml
+ 2079  ansible-playbook -i inventory.ini playbook.yml 
+ 2080  ansible-playbook -i inventory.ini playbook.yml  all
+ 2081  ansible-playbook -i inventory.ini playbook.yml all
+ 2082  cd ..
+ 2083  cp playbook/playbook.yml .
+ 2084  ll
+ 2085  rm -rf playbook
+ 2086  ll
+ 2087  ansible-playbook -i inventory.ini playbook.yml all
+ 2088  ll
+ 2089  ansible -m ping all
+ 2090  ansible-playbook -i inventory.ini playbook.yml all
+ 2091  ansible-playbook  playbook.yml all
+ 2092  ansible-playbook -i inventory playbook.yml
+ 2093  ansible-playbook -i inventory.ini playbook.yml
+ 2094  mkdir playbook
+ 2095  cd playbook/
+ 2096  cp ../playbook.yml 
+ 2097  cp ../playbook.yml .
+ 2098  ansible-playbook playbook.yml
+ 2099  cd
+ 2100  cd ansible_practice/
+ 2101  ll
+ 2102  rm -rf playbook.yml 
+ 2103  ll
+ 2104  cd playbook/
+ 2105  ansible-playbook playbook.yml
+ 2106  cd ..
+ 2107  ll
+ 2108  cd playbook/
+ 2109  code .
+ 2110  ansible-playbook playbook.yml
+ 2111  code ,
+ 2112  code .
+ 2113  ansible-playbook playbook.yml
+ 2114  ansible -m setup all
+ 2115  ll
+ 2116  code .
+ 2117  ansible -m playbook playbook1.yml 
+ 2118  ansible-playbook playbook1.yml
+ 2119  ansible -m setup all
+ 2120  ansible-playbook playbook1.yml
+ 2121  ls
+ 2122  vi playbook1.yml 
+ 2123  ansible -m setup all
+ 2124  vi playbook1.yml 
+ 2125  ansible-playbook playbook1.yml
+ 2126  ansible -m setup all |grep "ip"
+ 2127  ansible -m setup all |grep "ipv4"
+ 2128  cd /usr/lib/python3/dist-packages/ansible
+ 2129  ls
+ 2130  cd collections/
+ 2131  ll
+ 2132  cat list.py 
+ 2133  ll
+ 2134  pwd
+ 2135  ll
+ 2136  cat __init__.py 
+ 2137  cd /home/dopadm/ansible_practice/playbook/
+ 2138  lls
+ 2139  ll
+ 2140  cd /usr/lib/python3/dist-packages/ansible
+ 2141  ll
+ 2142  cd playbook/
+ 2143  ll
+ 2144  cd ..
+ 2145  ll
+ 2146  cd utils/
+ 2147  ll
+ 2148  cat plugin_docs.py 
+ 2149  ll
+ 2150  cat vars.py 
+ 2151  cd ..
+ 2152  ll
+ 2153  cd template/
+ 2154  ll
+ 2155  cat *
+ 2156  cd /home/dopadm/ansible_practice/playbook/
+ 2157  lls
+ 2158  ll;
+ 2159* 
+ 2160  ansible-playbook playbook1.yml
+ 2161  cp playbook1.yml  playbook2.yml
+ 2162  code .
+ 2163  ansible-playbook playbook2.yml
+ 2164  ansible-playbook playbook1.yml
+ 2165  ansible-playbook playbook2.yml
+ 2166  code .
+ 2167* 
+ 2168  ansible-playbook playbook2.yml
+ 2169  cp ../inventory.ini .
+ 2170  code .
+ 2171  ansible-playbook playbook2.yml
+ 2172  ansible-playbook -i inventory.yml playbook2.yml
+ 2173  PLAY [My second play] ***************************************************************************************************************************
+ 2174  skipping: no hosts matched
+ 2175  PLAY RECAP **************************************************************************************************************************************
+ 2176  PLAY [My second play] ***************************************************************************************************************************
+ 2177  skipping: no hosts matched
+ 2178  PLAY RECAP **************************************************************************************************************************************
+ 2179  PLAY [My second play] ***************************************************************************************************************************
+ 2180  skipping: no hosts matched
+ 2181  PLAY RECAP **************************************************************************************************************************************
+ 2182  PLAY [My second play] ***************************************************************************************************************************
+ 2183  skipping: no hosts matched
+ 2184  PLAY RECAP **************************************************************************************************************************************
+ 2185  cd /usr/
+ 2186  ll
+ 2187  cd bin/
+ 2188  ll
+ 2189  cd ansible
+ 2190  ansible
+ 2191  cd ansible
+ 2192  cd
+ 2193  history
+ 2194  cd /usr/lib/python3/dist-packages/ansible
+ 2195  ll
+ 2196  cd module
+ 2197  cd modules/
+ 2198  ll
+ 2199  cat gather_facts.py 
+ 2200  ll
+ 2201  cd /home/dopadm/ansible_practice/
+ 2202  ll
+ 2203  cd /usr/lib/python3/dist-packages/ansible
+ 2204  ll
+ 2205  cd inventory/
+ 2206  ll
+ 2207  cat manager.py 
+ 2208  ll
+ 2209  cat group.py 
+ 2210  cd /home/dopadm/ansible_practice/
+ 2211  ll
+ 2212  ansible-playbook -i inventory.yml playbook2.yml
+ 2213  cd playbook/
+ 2214  ansible-playbook -i inventory.yml playbook2.yml
+ 2215  cp inventory.yml parent.yml
+ 2216  code .
+ 2217  ansible-playbook -i parent.yml playbook2.yml
+ 2218  ansible-playbook -i inventory.yml playbook2.yml
+ 2219  ansible-playbook -i parent.yml playbook2.yml
+ 2220  ansible-playbook -i parent.yml playbook1.yml
+ 2221  cd ..
+ 2222  mkdir inventory
+ 2223  cd inventory/
+ 2224  cp ../playbook/
+ 2225  cp  ../playbook/inventory.yml .
+ 2226  cp  ../playbook/parent.yml .
+ 2227  cd ..
+ 2228  cd playbook/
+ 2229  ansible-playbook -i ../parent.yml playbook1.yml
+ 2230  ansible-playbook -i ../inventory/parent.yml playbook1.yml
+ 2231  ansible-playbook -i ../inventory/inventory.yml playbook1.yml
+ 2232  ansible-playbook -i ../inventory/inventory.yml playbook2.yml
+ 2233  ansible-playbook -i ../inventory/inventory.yml playbook1.yml
+ 2234  ansible-playbook -i ../inventory/ playbook1.yml
+ 2235  sudo su
+ 2236  sudo dopam
+ 2237  sudo dopadm
+ 2238  sudo user=dopadm
+ 2239  sudo user
+ 2240  sudo dopadm@localhost
+ 2241  ansible
+ 2242* ansible-playbook 
+ 2243  ansible.bulitlin.yum
+ 2244  print(ansible.bulitlin.yum)
+ 2245  history | grep user
+ 2246  ansible -m user -i inventory.ini -a 'name=user1 update_password=always password={{user1pwd|password_hash("sha512")}}' playbook2.yml 
+ 2247* ansible
+ 2248  code.
+ 2249  code .
+ 2250  ansible-playbook playbook3.yml 
+ 2251  ssh anand@192.168.1.101
+ 2252* 
+ 2253  - name: Create a new user group
+ 2254  ansible-playbook playbook3.yml 
+ 2255  ssh anand@192.168.1.101
+ 2256  ssh anand@192.168.1.102
+ 2257  ssh anand@192.168.1.103
+ 2258  ansible-playbook playbook3.yml 
+ 2259  history |grep setup
+ 2260* 
+ 2261  history |grep setup
+ 2262  ansible -m setup all
+ 2263  ansible -m setup all |grep SRE
+ 2264  ansible -m setup all |grep devops
+ 2265  ansible -m setup all |grep  group
+ 2266* 
+ 2267  ansible-playbook playbook3.yml 
+ 2268  ssh anand@192.168.1.101
+ 2269  code
+ 2270  code ,
+ 2271  code .
+ 2272  ansible-playbook playbook3.yml 
+ 2273  ssh gagana@192.168.1.101
+ 2274  ssh anand@192.168.1.101
+ 2275  ssh gagana@192.168.1.101
+ 2276  ssh anand@192.168.1.101
+ 2277  ssh gagana@192.168.1.101
+ 2278  ansible-playbook playbook3.yml 
+ 2279  ll
+ 2280  ansible -m file -a 'path=/home/dopadm/ansible_practice/playbook state=playbook3.yml' all
+ 2281  ansible-playbook  /home/dopadm/ansible_practice/playbook3.yml
+ 2282  cd
+ 2283  ansible -m file -a 'path=/home/dopadm/ansible_practice/playbook state=touch' all
+ 2284  ansible all -m file -a 'path=/home/dopadm/ansible_practice/playbook state=touch mode=0644'
+ 2285  ansible all -m file -a 'path=/home/dopadm/ansible_practice/ state=touch mode=0644'
+ 2286  ll
+ 2287  cd ansible_practice/
+ 2288  ll
+ 2289  ansible all -m file -a 'path=/home/dopadm/ansible-anand state=dir 'all
+ 2290  ansible all -m file -a 'path=/home/dopadm/ansible-anand state=directory' all
+ 2291  ansible all -m file -a 'path=/home/dopadm/ansible-anand state=directory' 
+ 2292  cd 
+ 2293  cd ansible_practice/
+ 2294  ssh anand@198.168.1.101
+ 2295  ssh gagana@192.168.1.101
+ 2296  ansible all -m file -a 'path=/home/dopadm/ansible-anand/anand.txt state=touch' 
+ 2297  ssh anand@192.168.1.101
+ 2298  ssh gagana@192.168.1.101
+ 2299  ssh gagana@192.168.1.102
+ 2300  ssh gagana@192.168.1.103
+ 2301  ssh anand@192.168.1.103
+ 2302  ssh gagana@192.168.1.103
+ 2303  ansible all -m file -a 'path=/home/dopadm/ansible-anand/anand.py state=vi' 
+ 2304  ansible all -m file -a 'path=/home/dopadm/ansible-anand/anand.txt state=vi' 
+ 2305  ansible all -m file -a 'path=/home/dopadm/ansible-anand/anand.txt state=vi'
+ 2306  ansible all -m file -a 'path=/home/dopadm/ansible-anand/anand.txt state=nano'
+ 2307  ssh gagana@198.168.1.101
+ 2308  ssh gagana@192.168.1.103
+ 2309  ssh gagana@192.168.1.101
+ 2310  history |grep setup
+ 2311  ansible -m setup all
+ 2312  ll
+ 2313  cat hel.txt 
+ 2314  ansible -m command -a 'tree /root' all
+ 2315  ansible -m command -a 'tree /' all
+ 2316  ansible -m command -a 'tree ' all
+ 2317  ansible -m command -a 'tree /home ' all
+ 2318  ansible -m command -a 'tree / ' all
+ 2319  ansible -m command -a 'tree /root ' all
+ 2320  ansible -m command -a 'tree /root' all
+ 2321  ssh gagana@198.168.1.101
+ 2322  ssh gagana@192.168.1.101
+ 2323  ansible -m package -a 'name=tree state=present' all
+ 2324  ansible -m command -a 'tree /root' all
+ 2325  history |cat >>hel.txt 

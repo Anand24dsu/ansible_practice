@@ -1,0 +1,24 @@
+---
+- name: Gather network interface information using ifconfig
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install net-tools (required for ifconfig)
+      apt:
+        name: net-tools
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Install net-tools on RedHat/CentOS
+      yum:
+        name: net-tools
+        state: present
+      when: ansible_os_family == "RedHat"
+
+    - name: Gather network interface information
+      command: ifconfig
+      register: ifconfig_output
+
+    - name: Print network interface information
+      debug:
+        var: ifconfig_output.stdout

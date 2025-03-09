@@ -1,0 +1,10 @@
+- hosts: all
+  tasks:
+    - name: Copy hello.sh to remote hosts
+      ansible.builtin.copy:
+        src: /home/dopadm/ansible_practice/playbook/hello.sh
+        dest: ~/hello.sh
+        mode: '0755'
+  
+    - name: Execute hello.sh
+      ansible.builtin.shell: ~/hello.sh >> ~/out.txt

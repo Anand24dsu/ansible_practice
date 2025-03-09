@@ -1,0 +1,27 @@
+- hosts: all
+  tasks:
+    - name: Collect only facts returned by facter
+      ansible.builtin.setup:
+        gather_subset:
+          - '!all'
+          - '!min'
+          - facter
+
+    - name: Filter and return only selected facts
+      ansible.builtin.setup:
+        filter:
+          - 'ansible_distribution'
+          - 'ansible_machine_id'
+          - 'ansible_*_mb'
+
+# Display only facts about certain interfaces.
+# ansible all -m ansible.builtin.setup -a 'filter=ansible_eth[0-2]'
+
+# Restrict additional gathered facts to network and virtual (includes default minimum facts)
+# ansible all -m ansible.builtin.setup -a 'gather_subset=network,virtual'
+
+# Collect only network and virtual (excludes default minimum facts)
+# ansible all -m ansible.builtin.setup -a 'gather_subset=!all,network,virtual'
+
+# Do not call puppet facter or ohai even if present.
+# ansible all -m ansible.builtin.setup -a 'gather_subset=!facter,!ohai'

@@ -1,0 +1,31 @@
+- name: My NGINX playbook
+  hosts: all
+  tasks:
+    - name: Install Nginx on Debian
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Install Nginx on RedHat
+      ansible.builtin.yum:
+        name: nginx
+        state: present
+      when: ansible_os_family == "RedHat"
+
+    - name: Install Nginx on Alpine
+      ansible.builtin.apk:
+        name: nginx
+        state: present
+      when: ansible_os_family == "Alpine"
+    - name: Start NGINX service
+      ansible.builtin.service:
+        name: nginx
+        state: started
+
+    - name: Gather service facts
+      ansible.builtin.service_facts:
+
+    - name: Check if NGINX is running
+      ansible.builtin.debug:
+        msg: "NGINX is {{ ansible_facts.services['nginx'].state }}"

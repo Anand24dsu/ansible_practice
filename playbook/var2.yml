@@ -1,0 +1,14 @@
+var2: "This is a value from var2.yml"
+foo:
+  subkey1: "This is subkey1 from var2.yml"
+  subkey2: "This is subkey2 from var2.yml"
+names:
+  - "Alice"
+  - "Bob"
+  - "Charlie"
+  - "Diana"
+int_values:
+  - 1
+  - 2
+  - 3
+  - 4

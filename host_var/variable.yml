@@ -1,0 +1,38 @@
+- hosts: all
+  vars:
+    installtype: "prod"
+    version: 9
+  vars_files:
+    - extvar.yml
+    - var2.yml
+  vars_prompt:
+    - name: pvar
+      prompt: "Enter your name"
+
+  tasks:
+    - debug:
+        msg: "{{ ansible_os_family }}"
+
+    - debug: 
+        var: installtype
+
+    - debug:
+        var: externalvar  
+
+    - debug:
+        var: var2  
+
+    - debug:
+        var: foo.subkey1  
+
+    - debug:
+        var: names  
+
+    - debug:
+        var: int_values 
+    - debug:
+        var: pvar   
+
+    - ansible.builtin.debug:
+        var: version
+      when: version is defined

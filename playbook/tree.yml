@@ -1,0 +1,24 @@
+---
+- name: Install and use tree command
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install tree on Debian-based systems
+      apt:
+        name: tree
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Install tree on RedHat-based systems
+      yum:
+        name: tree
+        state: present
+      when: ansible_os_family == "RedHat"
+
+    - name: Display directory structure using tree
+      command: tree /path/to/directory
+      register: tree_output
+
+    - name: Print tree output
+      debug:
+        var: tree_output.stdout

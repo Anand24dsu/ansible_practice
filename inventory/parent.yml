@@ -1,0 +1,24 @@
+db:
+  hosts:
+    db01:
+      ansible_host: 192.168.1.101
+      ansible_user: root
+      ansible_ssh_pass: password
+ 
+ 
+app:
+  hosts:
+    app01:
+      ansible_host: 192.168.1.102
+      ansible_user: root
+      ansible_ssh_pass: password
+ 
+ 
+web:
+  hosts:
+    web01:
+      ansible_host: 192.168.1.103
+      ansible_user: root
+      ansible_ssh_pass: password
+ 
+ 

@@ -1,0 +1,22 @@
+- name: Example Playbook
+  hosts: all
+  tasks:
+    - name: Create SRE group
+      ansible.builtin.group:
+        name: SRE
+
+    - name: Create user anand and add to SRE group
+      ansible.builtin.user:
+        name: anand
+        password: "{{ 'anand' | password_hash('sha512') }}"
+        groups: SRE
+        state: absent
+    - name: Create user gagana and add to SRE group
+      ansible.builtin.user:
+        name: gagana
+        password: "{{ 'anand' | password_hash('sha512') }}"
+        groups: SRE
+        append: yes
+        shell: /bin/bash
+
+

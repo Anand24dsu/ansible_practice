@@ -1,0 +1,19 @@
+- hosts: all
+  become: yes 
+  vars_prompt:
+    - name: pvar
+      prompt: "Enter your name" 
+  tasks:
+    - name: Install required packages
+      ansible.builtin.package:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - nginx
+        - git
+        - vim
+      tags:
+      - printlist
+    - debug:
+        var: pvar 
+      ignore_errors: yes  

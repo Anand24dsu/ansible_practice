@@ -1,0 +1,85 @@
+---
+- name: Install YugabyteDB using Docker
+  hosts: 192.168.1.101
+  become: yes
+  vars:
+    venv_path: /opt/venv
+
+  tasks:
+    - name: Install dependencies
+      apt:
+        name:
+          - docker.io
+          - python3-pip
+          - python3-venv
+        state: present
+        update_cache: yes
+
+    - name: Create a virtual environment
+      command:
+        cmd: python3 -m venv {{ venv_path }}
+      args:
+        creates: "{{ venv_path }}"
+
+    - name: Install Docker Python module in virtual environment
+      ansible.builtin.pip:
+        name: docker
+        virtualenv: "{{ venv_path }}"
+
+    - name: Check if Docker is installed
+      command: docker --version
+      register: docker_check
+      ignore_errors: yes
+      changed_when: false
+
+    - name: Debug Docker installation
+      debug:
+        var: docker_check.stdout
+
+    - name: Start Docker manually if systemd is unavailable
+      command: dockerd
+      async: 10
+      poll: 0
+      ignore_errors: yes
+      when: "'Docker' not in docker_check.stdout"
+
+    - name: Verify Docker is running
+      command: docker info
+      register: docker_info
+      ignore_errors: yes
+      changed_when: false
+
+    - name: Debug Docker info
+      debug:
+        var: docker_info.stdout_lines
+
+    - name: Pull YugabyteDB Docker image
+      docker_image:
+        name: yugabytedb/yugabyte
+        tag: latest
+        source: pull
+      register: docker_pull_result
+      ignore_errors: yes
+
+    - name: Download YugabyteDB manually if Docker pull fails
+      get_url:
+        url: https://downloads.yugabyte.com/docker/yugabyte-latest.tar
+        dest: /tmp/yugabyte.tar
+      when: docker_pull_result.failed
+
+    - name: Load Docker image from local file if needed
+      command: docker load -i /tmp/yugabyte.tar
+      when: docker_pull_result.failed
+
+    - name: Run YugabyteDB container
+      docker_container:
+        name: yugabyte
+        image: yugabytedb/yugabyte:latest
+        state: started
+        restart_policy: always
+        ports:
+          - "7000:7000"
+          - "5433:5433"
+          - "9042:9042"
+          - "6379:6379"
+        command: ["/home/yugabyte/bin/yugabyted", "start", "--daemon=false"]
