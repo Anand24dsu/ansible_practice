@@ -1,0 +1,13 @@
+- hosts: all
+  gather_facts: yes
+  
+  tasks:
+    - name: Debug xvda model
+      ansible.builtin.debug:
+  
+        msg: "The model of xvda is {{ ansible_facts['nodename'] }}"
+        
+    - name: Show a specific variable for the current host
+      ansible.builtin.debug:
+        msg: "The OS family is {{ hostvars[inventory_hostname]['ansible_facts']['os_family']  }}"
+

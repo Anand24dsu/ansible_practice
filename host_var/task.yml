@@ -1,0 +1,2 @@
+- debug:
+    msg: "{{ ansible_os_family }}"

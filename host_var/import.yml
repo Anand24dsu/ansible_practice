@@ -1,0 +1,24 @@
+- hosts: all
+  tasks:
+    - ansible.builtin.debug:
+        msg: "task1"
+
+    - name: Include task list in play
+      ansible.builtin.import_tasks:
+        file: /home/dopadm/ansible_practice/host_var/task.yml
+      tags:
+        - install
+
+    - ansible.builtin.debug:
+        msg: "task10"
+
+    - ansible.builtin.debug:
+        msg: "task1"
+
+- name: Include variables in another play
+  ansible.builtin.import_playbook: /home/dopadm/ansible_practice/host_var/variable.yml
+
+- name: Include another play
+  ansible.builtin.import_playbook: /home/dopadm/ansible_practice/host_var/error.yml
+  tags:
+    - always

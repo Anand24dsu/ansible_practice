@@ -5,6 +5,7 @@
   vars_files:
     - extvar.yml
     - var2.yml
+  
   vars_prompt:
     - name: pvar
       prompt: "Enter your name"

@@ -1,0 +1,33 @@
+- hosts: all
+  tasks:
+    - name: Run a command and ignore errors
+      command: /bin/false
+      ignore_errors: yes
+      register: tree
+
+    - name: Display a good morning message
+      debug:
+        msg: "Good morning"
+
+    - name: Copy httpd configuration
+      ansible.builtin.copy:
+        src: ./a.txt
+        dest: ~/a.txt
+      changed_when: true
+      register: copy_output  # Registering copy task output
+
+    - name: Display tree structure
+      command: tree
+      register: tree_output
+      ignore_errors: yes
+
+    - name: Print tree output
+      debug:
+        msg: "{{ tree.stdout }}"
+    - name: Print tree output
+      debug:
+        msg: "{{ tree_output.stdout }}"
+
+    - name: Print copy task output
+      debug:
+        msg: "{{ copy_output }}"

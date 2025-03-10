@@ -1,0 +1,33 @@
+- hosts: all
+  tasks:
+    - name: Restart everything
+      command: echo "this task will restart the web services"
+      notify: "restart web services"
+
+    - name: Copy httpd configuration
+      ansible.builtin.copy:
+        src: ./a.txt
+        dest: ~/a.txt
+      changed_when: true
+      notify: "restart apache"
+
+    # - name: Flush Handlers
+    #   ansible.builtin.meta: flush_handlers
+
+    - name: Debug Message
+      ansible.builtin.debug:
+        msg: "Hello world!"
+
+  handlers:
+    - name: Restart memcached
+      ansible.builtin.debug:
+        msg: "Restarting memcached"
+      listen: "restart web services"
+
+    - name: Restart apache
+      ansible.builtin.debug:
+        msg: "Restarting Apache"
+      listen: "restart apache"
+    - name: Flush Handlers
+      ansible.builtin.meta: flush_handlers
+

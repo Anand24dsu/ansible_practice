@@ -1,36 +1,73 @@
 - hosts: all
   vars:
     installtype: "prod"
-    # version: 9.1
   vars_files:
     - extvar.yml
     - var2.yml
 
   tasks:
-    - debug:
+    - name: Debug Ansible OS Family
+      debug:
         msg: "{{ ansible_os_family }}"
 
-    - debug: 
+    - name: Debug installtype variable
+      debug:
         var: installtype
 
-    - debug:
-        var: externalvar  
+    - name: Debug externalvar (ensure it exists in extvar.yml)
+      debug:
+        var: externalvar
 
-    - debug:
-        var: var2  
+    - name: Debug var2 (ensure it's defined in var2.yml)
+      debug:
+        var: var2
 
-    - debug:
-        var: foo.subkey1  
+    - name: Debug foo.subkey1 (ensure the key exists in your vars)
+      debug:
+        var: foo.subkey1
 
-    - debug:
-        var: names  
+    - name: Debug names variable
+      debug:
+        var: names
 
-    - debug:
-        var: int_values  
+    - name: Debug int_values variable
+      debug:
+        var: int_values
 
-    - ansible.builtin.debug:
-        var: version
-      when: version is defined
-    - template:
+    - name: Generate para.txt file from template
+      template:
         src: var.j2
         dest: para.txt
+
+    - name: Run shell command 'echo'
+      shell: echo "hello gagana"
+      register: shell_output
+
+    - name: Check shell_output only if defined
+      ansible.builtin.debug:
+        var: shell_output
+      when: shell_output.rc == 5
+
+    - name: Run shell command 'tree'
+      shell: tree
+      register: tree_output
+
+    - name: Debug output of 'tree' command
+      ansible.builtin.debug:
+        var: tree_output
+
+    - name: Debug output of ansible_os_family for Debian
+      ansible.builtin.debug:
+        msg: "{{ ansible_os_family }}"
+      when: ansible_os_family == "Debian"
+    - name: Debug output of ansible_os_family for alpine
+      ansible.builtin.debug:
+        msg: "{{ ansible_os_family }}"
+      when: ansible_os_family == "Alpine"
+    # - name: Debug
+    #   ansible.builtin.dict2item:
+    #    tags:
+    #     Application : anand
+        
+
+

@@ -1,26 +1,143 @@
+# ---
+# - name: Setup AWS EC2 instance and configure passwordless SSH
+#   hosts: localhost
+#   gather_facts: false
+#   vars:
+#     aws_region: "us-east-1"
+#     instance_type: "t2.micro"
+#     ami_id: "ami-04b4f1a9cf54c11d0"  # Replace with your AMI ID
+#     key_name: "my-ansible-key"
+#     security_group: "my-security-group"
+#     ssh_key_file: "~/.ssh/my-ansible-key"
+#     username: "ubuntu"
+#     remote_port: 22
+
+#   tasks:
+#     - name: Create SSH key pair if missing
+#       command: ssh-keygen -t rsa -b 4096 -f "{{ ssh_key_file }}" -N ""
+#       args:
+#         creates: "{{ ssh_key_file }}"
+
+#     - name: Extract public key from private key
+#       command: ssh-keygen -y -f "{{ ssh_key_file }}"
+#       register: public_key
+
+#     - name: Save public key to file
+#       copy:
+#         content: "{{ public_key.stdout }}"
+#         dest: "{{ ssh_key_file }}.pub"
+#         mode: "0644"
+
+#     - name: Create key pair in AWS
+#       amazon.aws.ec2_key:
+#         name: "{{ key_name }}"
+#         region: "{{ aws_region }}"
+#         key_material: "{{ public_key.stdout }}"
+#       register: ec2_key
+#       ignore_errors: true
+
+#     - name: Ensure security group exists
+#       amazon.aws.ec2_group:
+#         name: "{{ security_group }}"
+#         description: "Allow SSH access"
+#         region: "{{ aws_region }}"
+#         rules:
+#           - proto: tcp
+#             ports: [22]
+#             cidr_ip: "0.0.0.0/0"
+#       register: sg_creation
+
+#     - name: Launch EC2 instance
+#       amazon.aws.ec2_instance:
+#         name: "Ansible-Managed-EC2"
+#         key_name: "{{ key_name }}"
+#         instance_type: "{{ instance_type }}"
+#         security_group: "{{ security_group }}"
+#         image_id: "{{ ami_id }}"
+#         region: "{{ aws_region }}"
+#         wait: yes
+#       register: ec2_instance
+
+#     - name: Wait for SSH to be available
+#       wait_for:
+#         host: "{{ ec2_instance.instances[0].public_ip_address }}"
+#         port: "{{ remote_port }}"
+#         delay: 10
+#         timeout: 300
+
+#     - name: Add EC2 instance to Ansible inventory
+#       add_host:
+#         name: "new_ec2"
+#         ansible_host: "{{ ec2_instance.instances[0].public_ip_address }}"
+#         ansible_user: "{{ username }}"
+#         ansible_ssh_private_key_file: "{{ ssh_key_file }}"
+#         ansible_ssh_common_args: "-o StrictHostKeyChecking=no"
+
+# - name: Configure passwordless SSH on EC2
+#   hosts: new_ec2
+#   gather_facts: false
+#   tasks:
+#     - name: Ensure .ssh directory exists
+#       file:
+#         path: "~/.ssh"
+#         state: directory
+#         mode: "0700"
+
+#     - name: Copy public key to remote host
+#       authorized_key:
+#         user: "{{ ansible_user | default('ubuntu') }}"
+#         state: present
+#         key: "{{ lookup('file', ssh_key_file + '.pub') }}"
+
+#     - name: Test SSH connection
+#       shell: "hostname && id"
+#       register: ssh_test
+#       failed_when: ssh_test.rc != 0
+
+#     - name: Print SSH test output
+#       debug:
+#         var: ssh_test.stdout_lines
 ---
-- name: Create AWS EC2 instance and setup passwordless SSH
+- name: Setup AWS EC2 instance and configure passwordless SSH
   hosts: localhost
   gather_facts: false
   vars:
     aws_region: "us-east-1"
     instance_type: "t2.micro"
-    ami_id: "ami-04b4f1a9cf54c11d0"  # Change this to your region's Ubuntu AMI
+    ami_id: "ami-04b4f1a9cf54c11d0"  # Replace with your region-specific Ubuntu AMI
     key_name: "my-ansible-key"
     security_group: "my-security-group"
     ssh_key_file: "~/.ssh/my-ansible-key"
-    username: "ubuntu"  # Change this for Amazon Linux/RHEL
+    username: "ubuntu"
     remote_port: 22
 
   tasks:
-    - name: Create key pair if not exists
+    - name: Ensure SSH key exists
+      stat:
+        path: "{{ ssh_key_file }}"
+      register: key_status
+
+    - name: Generate SSH key if it does not exist
+      command: ssh-keygen -t rsa -b 4096 -f "{{ ssh_key_file }}" -N ""
+      when: not key_status.stat.exists
+
+    - name: Ensure SSH key has correct permissions
+      file:
+        path: "{{ ssh_key_file }}"
+        mode: "0600"
+
+    - name: Ensure public key exists
+      command: ssh-keygen -y -f "{{ ssh_key_file }}" > "{{ ssh_key_file }}.pub"
+      when: not key_status.stat.exists
+
+    - name: Create AWS key pair (if not exists)
       amazon.aws.ec2_key:
         name: "{{ key_name }}"
         region: "{{ aws_region }}"
       register: ec2_key
       ignore_errors: true
 
-    - name: Save the private key locally
+    - name: Save private key locally
       copy:
         content: "{{ ec2_key.key.private_key }}"
         dest: "{{ ssh_key_file }}"
@@ -30,13 +147,12 @@
     - name: Ensure security group exists
       amazon.aws.ec2_group:
         name: "{{ security_group }}"
-        description: "Allow SSH"
+        description: "Allow SSH access"
         region: "{{ aws_region }}"
         rules:
           - proto: tcp
             ports: [22]
             cidr_ip: "0.0.0.0/0"
-      register: sg_creation
 
     - name: Launch EC2 instance
       amazon.aws.ec2_instance:
@@ -64,7 +180,7 @@
         ansible_ssh_private_key_file: "{{ ssh_key_file }}"
         ansible_ssh_common_args: "-o StrictHostKeyChecking=no"
 
-- name: Configure passwordless SSH
+- name: Configure passwordless SSH on EC2
   hosts: new_ec2
   gather_facts: false
   tasks:
@@ -76,15 +192,26 @@
 
     - name: Copy public key to remote host
       authorized_key:
-        user: "{{ ansible_user }}"
+        user: "{{ ansible_user | default('ubuntu') }}"
         state: present
-        key: "{{ lookup('file', '{{ ssh_key_file }}.pub') }}"
+        key: "{{ lookup('file', ssh_key_file + '.pub') }}"
+
+    - name: Ensure SSH key permissions are correct
+      file:
+        path: "~/.ssh/authorized_keys"
+        mode: "0600"
+
+    - name: Restart SSH service (if needed)
+      service:
+        name: ssh
+        state: restarted
+      ignore_errors: true
 
     - name: Test SSH connection
-      shell: "hostname; id"
+      shell: "hostname && id"
       register: ssh_test
       failed_when: ssh_test.rc != 0
 
     - name: Print SSH test output
       debug:
-        var: ssh_test.stdout_lines
+        var: ssh_test.stdout

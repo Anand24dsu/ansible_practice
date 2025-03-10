@@ -1,0 +1,10 @@
+- hosts: all
+  tasks:
+  - command: sleep 5
+    async: 9
+    poll: 1
+    register: async_result
+ 
+  - debug:
+      msg: "async command {{async_result}}"
+ 

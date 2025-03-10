@@ -1,0 +1,339 @@
+# - name: Setup AWS EC2 instance and configure passwordless SSH
+#   hosts: localhost
+#   gather_facts: false
+#   vars:
+#     aws_region: "us-east-1"
+#     instance_type: "t2.micro"
+#     ami_id: "ami-04b4f1a9cf54c11d0"  # Replace with your region-specific Ubuntu AMI
+#     key_name: "my-ansible-key"
+#     security_group: "my-security-group"
+#     ssh_key_file: "~/.ssh/my-ansible-key"  # Define SSH key file
+#     username: "ubuntu"
+#     remote_port: 22
+
+#   tasks:
+#     - name: Ensure SSH key exists
+#       stat:
+#         path: "{{ ssh_key_file }}"
+#       register: key_status
+
+#     - name: Generate SSH key if it does not exist
+#       command: ssh-keygen -t rsa -b 4096 -f "{{ ssh_key_file }}" -N ""
+#       when: not key_status.stat.exists
+
+#     - name: Ensure SSH key has correct permissions
+#       file:
+#         path: "{{ ssh_key_file }}"
+#         mode: "0600"
+
+#     - name: Create AWS key pair (if not exists)
+#       amazon.aws.ec2_key:
+#         name: "{{ key_name }}"
+#         region: "{{ aws_region }}"
+#       register: ec2_key
+#       ignore_errors: true
+
+#     - name: Save private key locally
+#       copy:
+#         content: "{{ ec2_key.key.private_key }}"
+#         dest: "{{ ssh_key_file }}"
+#         mode: "0600"
+#       when: ec2_key.changed
+
+#     - name: Ensure security group exists
+#       amazon.aws.ec2_group:
+#         name: "{{ security_group }}"
+#         description: "Allow SSH access"
+#         region: "{{ aws_region }}"
+#         rules:
+#           - proto: tcp
+#             ports: [22]
+#             cidr_ip: "0.0.0.0/0"
+
+#     - name: Launch EC2 instance
+#       amazon.aws.ec2_instance:
+#         name: "Ansible-Managed-EC2"
+#         key_name: "{{ key_name }}"
+#         instance_type: "{{ instance_type }}"
+#         security_group: "{{ security_group }}"
+#         image_id: "{{ ami_id }}"
+#         region: "{{ aws_region }}"
+#         wait: yes
+#       register: ec2_instance
+
+#     - name: Wait for SSH to be available
+#       wait_for:
+#         host: "{{ ec2_instance.instances[0].public_ip_address }}"
+#         port: "{{ remote_port }}"
+#         delay: 10
+#         timeout: 300
+
+#     - name: Add EC2 instance to Ansible inventory
+#       add_host:
+#         name: "new_ec2"
+#         ansible_host: "{{ ec2_instance.instances[0].public_ip_address }}"
+#         ansible_user: "{{ username }}"
+#         ansible_ssh_private_key_file: "{{ ssh_key_file }}"
+#         ansible_ssh_common_args: "-o StrictHostKeyChecking=no"
+
+# - name: Configure SSH and install YugabyteDB
+#   hosts: new_ec2
+#   become: yes   # Enable sudo privileges
+#   gather_facts: false
+#   vars:
+#     ssh_key_file: "~/.ssh/my-ansible-key"
+#     yugabyte_version: "2024.2.2.0"
+#     yugabyte_download_url: "https://software.yugabyte.com/releases/{{ yugabyte_version }}/yugabyte-{{ yugabyte_version }}-b70-linux-x86_64.tar.gz"
+
+#   tasks:
+#     - name: Ensure .ssh directory exists
+#       file:
+#         path: "~/.ssh"
+#         state: directory
+#         mode: "0700"
+
+#     - name: Copy public key to remote host
+#       authorized_key:
+#         user: "{{ ansible_user | default('ubuntu') }}"
+#         state: present
+#         key: "{{ lookup('file', ssh_key_file + '.pub') }}"
+
+#     - name: Ensure SSH key permissions are correct
+#       file:
+#         path: "~/.ssh/authorized_keys"
+#         mode: "0600"
+
+#     - name: Restart SSH service (if needed)
+#       service:
+#         name: ssh
+#         state: restarted
+#       ignore_errors: true
+
+#     - name: Update package lists
+#       apt:
+#         update_cache: yes
+
+#     - name: Install required dependencies
+#       apt:
+#         name:
+#           - curl
+#           - tar
+#           - wget
+#           - unzip
+#         state: present
+
+#     - name: Download YugabyteDB
+#       get_url:
+#         url: "{{ yugabyte_download_url }}"
+#         dest: "/tmp/yugabyte-{{ yugabyte_version }}.tar.gz"
+
+#     - name: Extract YugabyteDB
+#       unarchive:
+#         src: "/tmp/yugabyte-{{ yugabyte_version }}.tar.gz"
+#         dest: "/opt/"
+#         remote_src: yes
+
+#     - name: Set permissions for YugabyteDB
+#       file:
+#         path: "/opt/yugabyte-{{ yugabyte_version }}"
+#         state: directory
+#         owner: ubuntu
+#         group: ubuntu
+#         mode: "0755"
+
+#     - name: Add YugabyteDB to PATH
+#       lineinfile:
+#         path: "/etc/profile"
+#         line: "export PATH=/opt/yugabyte-{{ yugabyte_version }}/bin:$PATH"
+#         state: present
+
+#     - name: Reload profile to update PATH
+#       shell: source /etc/profile
+#       args:
+#         executable: /bin/bash
+
+#     - name: Verify YugabyteDB installation
+#       command: "/opt/yugabyte-{{ yugabyte_version }}/bin/yb-master --version"
+#       register: yugabyte_version_check
+#       ignore_errors: true
+
+#     - name: Show YugabyteDB version
+#       debug:
+#         var: yugabyte_version_check.stdout
+- name: Setup AWS EC2 instance and configure passwordless SSH
+  hosts: localhost
+  gather_facts: false
+  vars:
+    aws_region: "us-east-1"
+    instance_type: "t2.micro"
+    ami_id: "ami-04b4f1a9cf54c11d0"  # Replace with correct AMI ID
+    key_name: "my-ansible-key"
+    security_group: "yugabyte-sg"
+    ssh_key_file: "~/.ssh/my-ansible-key"
+    username: "ubuntu"
+    remote_port: 22
+
+  tasks:
+    - name: Ensure SSH key exists
+      stat:
+        path: "{{ ssh_key_file }}"
+      register: key_status
+
+    - name: Generate SSH key if it does not exist
+      command: ssh-keygen -t rsa -b 4096 -f "{{ ssh_key_file }}" -N ""
+      when: not key_status.stat.exists
+
+    - name: Set correct permissions for SSH key
+      file:
+        path: "{{ ssh_key_file }}"
+        mode: "0600"
+
+    - name: Create AWS key pair (if not exists)
+      amazon.aws.ec2_key:
+        name: "{{ key_name }}"
+        region: "{{ aws_region }}"
+      register: ec2_key
+      ignore_errors: true
+
+    - name: Save private key locally
+      copy:
+        content: "{{ ec2_key.key.private_key }}"
+        dest: "{{ ssh_key_file }}"
+        mode: "0600"
+      when: ec2_key.changed
+
+    - name: Ensure security group exists
+      amazon.aws.ec2_group:
+        name: "{{ security_group }}"
+        description: "Security group for YugabyteDB"
+        region: "{{ aws_region }}"
+        rules:
+          - proto: tcp
+            ports: [22, 5433, 9042, 6379, 7000, 7100]
+            cidr_ip: "0.0.0.0/0"
+
+    - name: Launch EC2 instance
+      amazon.aws.ec2_instance:
+        name: "Yugabyte-DB-Instance"
+        key_name: "{{ key_name }}"
+        instance_type: "{{ instance_type }}"
+        security_group: "{{ security_group }}"
+        image_id: "{{ ami_id }}"
+        region: "{{ aws_region }}"
+        wait: yes
+      register: ec2_instance
+
+    - name: Wait for SSH to be available
+      wait_for:
+        host: "{{ ec2_instance.instances[0].public_ip_address }}"
+        port: "{{ remote_port }}"
+        delay: 10
+        timeout: 300
+
+    - name: Add EC2 instance to Ansible inventory
+      add_host:
+        name: "new_ec2"
+        ansible_host: "{{ ec2_instance.instances[0].public_ip_address }}"
+        ansible_user: "{{ username }}"
+        ansible_ssh_private_key_file: "{{ ssh_key_file }}"
+        ansible_ssh_common_args: "-o StrictHostKeyChecking=no"
+
+- name: Configure SSH and Install YugabyteDB
+  hosts: new_ec2
+  become: yes
+  gather_facts: false
+  vars:
+    ssh_key_file: "~/.ssh/my-ansible-key"
+    yugabyte_version: "2024.2.2.0"
+    yugabyte_download_url: "https://software.yugabyte.com/releases/{{ yugabyte_version }}/yugabyte-{{ yugabyte_version }}-b70-linux-x86_64.tar.gz"
+
+  tasks:
+    - name: Ensure .ssh directory exists
+      file:
+        path: "/home/{{ ansible_user }}/.ssh"
+        state: directory
+        mode: "0700"
+
+    - name: Copy public key to remote host
+      authorized_key:
+        user: "{{ ansible_user | default('ubuntu') }}"
+        state: present
+        key: "{{ lookup('file', ssh_key_file + '.pub') }}"
+
+    - name: Set correct permissions for SSH keys
+      file:
+        path: "/home/{{ ansible_user }}/.ssh/authorized_keys"
+        mode: "0600"
+
+    - name: Restart SSH service
+      service:
+        name: ssh
+        state: restarted
+      ignore_errors: true
+
+    - name: Update package lists
+      apt:
+        update_cache: yes
+
+    - name: Install required dependencies
+      apt:
+        name:
+          - curl
+          - tar
+          - wget
+          - unzip
+        state: present
+
+    - name: Create YugabyteDB directory
+      file:
+        path: "/home/{{ ansible_user }}/yugabyte"
+        state: directory
+        owner: "{{ ansible_user }}"
+        group: "{{ ansible_user }}"
+        mode: "0755"
+
+    - name: Download YugabyteDB
+      get_url:
+        url: "{{ yugabyte_download_url }}"
+        dest: "/home/{{ ansible_user }}/yugabyte/yugabyte-{{ yugabyte_version }}.tar.gz"
+
+    - name: Extract YugabyteDB
+      unarchive:
+        src: "/home/{{ ansible_user }}/yugabyte/yugabyte-{{ yugabyte_version }}.tar.gz"
+        dest: "/home/{{ ansible_user }}/yugabyte"
+        remote_src: yes
+
+    - name: Set permissions for YugabyteDB
+      file:
+        path: "/home/{{ ansible_user }}/yugabyte/yugabyte-{{ yugabyte_version }}"
+        state: directory
+        owner: "{{ ansible_user }}"
+        group: "{{ ansible_user }}"
+        mode: "0755"
+
+    - name: Add YugabyteDB to PATH
+      lineinfile:
+        path: "/etc/profile"
+        line: "export PATH=/home/{{ ansible_user }}/yugabyte/yugabyte-{{ yugabyte_version }}/bin:$PATH"
+        state: present
+
+    - name: Reload profile to update PATH
+      shell: source /etc/profile
+      args:
+        executable: /bin/bash
+
+    - name: Start YugabyteDB master
+      shell: "/home/{{ ansible_user }}/yugabyte/yugabyte-{{ yugabyte_version }}/bin/yb-master --daemon --fs_data_dirs=/home/{{ ansible_user }}/yugabyte_data"
+
+    - name: Start YugabyteDB TServer
+      shell: "/home/{{ ansible_user }}/yugabyte/yugabyte-{{ yugabyte_version }}/bin/yb-tserver --daemon --fs_data_dirs=/home/{{ ansible_user }}/yugabyte_data"
+
+    - name: Verify YugabyteDB installation
+      command: "/home/{{ ansible_user }}/yugabyte/yugabyte-{{ yugabyte_version }}/bin/yb-master --version"
+      register: yugabyte_version_check
+      ignore_errors: true
+
+    - name: Show YugabyteDB version
+      debug:
+        var: yugabyte_version_check.stdout
+
