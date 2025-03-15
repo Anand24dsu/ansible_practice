@@ -1,0 +1,10 @@
+- hosts: all
+  vars: 
+    vara: 1
+  tasks:
+    - debug:
+        msg: "I am Anand"
+      when: vara | bool
+
+    - debug:
+        msg: "{{ 5 | int | bool }}"

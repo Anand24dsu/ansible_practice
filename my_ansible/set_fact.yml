@@ -1,0 +1,27 @@
+
+
+#     - name: Debug search fact
+#       ansible.builtin.debug:
+#         msg: "{{ search }}"
+#     - name: Debug search fact
+#       ansible.builtin.debug:
+#         msg: "{{name}}"   
+#     - name: Set fact with file lookup
+#       ansible.builtin.set_fact:
+#         search: "{{ lookup('ansible.builtin.file', 'sample.yml')| from_yaml }}"
+
+
+#     - name: Debug search fact
+#       ansible.builtin.debug:
+#         msg: "{{ search.Animal}}"
+
+- hosts: all
+  tasks:
+    - set_fact: 
+        name: "Gagana"
+    - debug: 
+        msg: "{{ name }}"
+    - set_fact: 
+        search: "{{ lookup('file','samplefile.yml') | from_yaml }}"
+    - debug: 
+        msg: "{{ search.sea_Animal }}"

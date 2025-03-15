@@ -1,0 +1,26 @@
+- hosts: all
+
+  tasks:
+    - name: Set fact with name "Anand"
+      ansible.builtin.set_fact:
+        name: Anand
+
+    - name: Debug with 'True'
+      ansible.builtin.debug:
+        msg: "{{ name }}"
+
+    - name: Set fact with file lookup
+      ansible.builtin.set_fact:
+        search: "{{ lookup('ansible.builtin.file', 'sample.yml') }}"
+
+    - name: Write  to a file
+      ansible.builtin.copy:
+        content: "{{ search }}"
+        dest: ./samplefile.yml
+        register : ans
+    - name: Write to a file
+      ansible.builtin.debug:
+        msg: "{{ ans.stdout }} check and fix"
+
+  
+

@@ -1,0 +1,64 @@
+- hosts: all
+
+  tasks:
+    - name: Set fact with name "Anand"
+      ansible.builtin.set_fact:
+        name: Anand
+
+    - name: Debug with 'True'
+      ansible.builtin.debug:
+        msg: "{{ name }}"
+
+    - name: Set fact with file lookup
+      ansible.builtin.set_fact:
+        search: "{{ lookup('ansible.builtin.file', './query.json') }}"
+
+    - name: Debug with corrected search
+      ansible.builtin.debug:
+        msg: "{{ search }}"
+
+    - name: Display all cluster names
+      ansible.builtin.debug:
+        var: item
+      loop: "{{ search | community.general.json_query('domain.cluster[*].name') }}"
+
+    - name: Display all server names
+      ansible.builtin.debug:
+        var: item
+      loop: "{{ search | community.general.json_query('domain.server[*].name') }}"
+
+    - name: Display all ports from cluster1
+      ansible.builtin.debug:
+        var: item
+      loop: "{{ search | community.general.json_query('domain.server[?cluster==`cluster1`].port') }}"
+
+    - name: Display all names from cluster1
+      ansible.builtin.debug:
+        var: item
+      loop: "{{ search | community.general.json_query('domain.server[?cluster==`cluster1`].name') }}"
+
+    - name: Display all ports from cluster2
+      ansible.builtin.debug:
+        var: item
+      loop: "{{ search | community.general.json_query('domain.server[?cluster==`cluster2`].port') }}"
+
+    - name: Display all names from cluster2
+      ansible.builtin.debug:
+        var: item
+      loop: "{{ search | community.general.json_query('domain.server[?cluster==`cluster2`].name') }}"
+
+    - name: Display all server ports and names from cluster1
+      ansible.builtin.debug:
+        var: item
+      vars:
+        server_name_cluster1_query: "domain.server[?cluster=='cluster1'].{name: name, port: port}"
+      loop: "{{ search | community.general.json_query(server_name_cluster1_query) }}"
+
+   
+
+
+
+
+
+
+  

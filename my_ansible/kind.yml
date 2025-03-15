@@ -1,0 +1,45 @@
+- hosts: all
+
+  vars:
+    k8sManiFestFile:
+      apiVersion: app/v1
+      name: App
+      kind: Deployment
+      metadata:
+        name: nginx-deployment
+        labels:
+          app: nginx
+      spec:
+        replicas: 3
+        selector:
+          matchLabels:
+            app: nginx
+        template:
+          metadata:
+            labels:
+              app: nginx
+          spec:
+            containers:
+              - name: nginx
+                image: nginx:1.14.2
+              - name: envyproxy
+                image: envoproxy
+  tasks:
+    - name: K8s ManiFestYaml
+      ansible.builtin.debug:
+        msg: "{{ k8sManiFestFile }}"
+    - name: K8s ManiFestYaml in JSON format
+      ansible.builtin.debug:
+        msg: "{{ k8sManiFestFile | to_json }}"
+    - name: K8s ManiFestYaml in YAML format
+      ansible.builtin.debug:
+        msg: "{{ k8sManiFestFile | to_yaml }}"
+    - name: K8s ManiFestYaml in nicely formatted JSON
+      ansible.builtin.debug:
+        msg: "{{ k8sManiFestFile | to_nice_json(indent=2) }}"
+    - name: K8s ManiFestYaml in nicely formatted YAML
+      ansible.builtin.debug:
+        msg: "{{ k8sManiFestFile | to_nice_yaml(indent=8) }}"
+    - name: K8s ManiFestYaml in nicely formatted YAML
+      ansible.builtin.debug:
+        msg: "{{ k8sManiFestFile |to_nice_yaml(indent=8, width=1337)}}"

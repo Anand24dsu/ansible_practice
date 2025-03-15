@@ -1,0 +1,13 @@
+- hosts: all
+  vars:
+    name: Anand
+  tasks:
+    - name: Debug message
+      debug:
+        msg: "I am being {{ name }}"
+    - name : default
+      debug:
+        msg: "I am being {{ name1 | default('gagana')}}"  
+    - name : default   
+      debug :
+        msg: "content of {{lookup('file','setup.sh')}}"

@@ -1,0 +1,44 @@
+- hosts: all
+  vars:
+    name: Anand
+    status: "Failed"
+
+  tasks:
+    - name: Touch files with an optional mode
+      ansible.builtin.file:
+        dest: "{{ item.path }}"
+        state: touch
+        mode: "{{ item.mode | default(omit) }}"
+      loop:
+        - path: ./foo
+        - path: ./bar
+        - path: ./baz
+          mode: "0444"
+    - name : ternary
+      debug :
+        msg: "{{ (status =='completed' )|ternary('enabled','disabled')}}"   
+
+
+    - name: Debug with 'True'
+      debug:
+        msg: "{{ 'True' | ternary('enabled', 'disabled') }}"
+
+    - name: Debug with 'False'
+      debug:
+        msg: "{{ 'False' | ternary('enabled', 'disabled') }}"
+
+    - name: Debug with 0
+      debug:
+        msg: "{{ 0 | ternary('enabled', 'disabled') }}"
+
+    - name: Debug with 1
+      debug:
+        msg: "{{ 1 | ternary('enabled', 'disabled') }}"
+
+    - name: Debug with state comparison
+      debug:
+        msg: "{{ state == 'completed' | ternary('enabled', 'disabled') }}"
+
+    - name: Debug with explicit state comparison
+      debug:
+        msg: "{{ (state == 'completed') | ternary('enabled', 'disabled') }}"

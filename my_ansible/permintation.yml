@@ -1,0 +1,24 @@
+- hosts: 192.168.1.101
+  vars:
+    list1 : [1,2,3]
+    list2 : ['anand','Gagana','Adarash']
+    list3 : ['Mango','Banana','Apple']
+  tasks:
+  - name: Give me permutations of sets of three
+    ansible.builtin.debug:
+      msg: "{{ [1,2,3,4,5] | ansible.builtin.permutations | list }}"
+  - name: Give me permutations of sets of three
+    ansible.builtin.debug:
+      msg: "{{ [1,2,3,4,5] | ansible.builtin.permutations(3) | list }}"
+  - name: Give me combinations for sets of two
+    ansible.builtin.debug:
+      msg: "{{ [1,2,3,4,5] | ansible.builtin.combinations(2) | list }}"
+  - name: Give me permutations of sets of three
+    ansible.builtin.debug:
+      msg: "{{ list1 | ansible.builtin.permutations | list }}"
+  - name: Give me permutations of sets of three
+    ansible.builtin.debug:
+      msg: "{{ list2 | ansible.builtin.permutations(3) | list }}"
+  - name: Give me combinations for sets of two
+    ansible.builtin.debug:
+      msg: "{{ list3 | ansible.builtin.combinations(2) | list }}"

@@ -1,0 +1,53 @@
+- hosts: all
+  vars:
+    name:
+      - Anand
+      - Sandeep
+      - Gagana
+    dict:
+      Devops: Gagana
+      Tester: Adarash
+      Developer: Druthi
+    itemvar:
+      - key: "CPU"
+        value: "4 cores"
+      - key: "Developer"
+        value: "Anand"
+    fruitvar:
+      - fruit : "Mango"
+        color : "Yellow"
+      - fruit : "Aplle"
+        color : "Red"
+      - fruit : "Orange"
+        color : "Orange"
+
+  tasks:
+    - name: Generate multiple hostnames (static list)
+      ansible.builtin.debug:
+        msg: "{{ ['foo', 'bar', 'anand', 'Gagana', 'adarashaaaaaa'] | product(['com']) | map('join', '.') | join(',') }}"
+
+    - name: Generate multiple hostnames (dynamic from name var)
+      ansible.builtin.debug:
+        msg: "{{ name | product(['com']) | map('join', '.') | join(',') }}"
+
+    - name: Convert dict to items
+      ansible.builtin.debug:
+        msg: "{{ dict | dict2items }}"
+
+    - name: Convert dict to items with custom key/value names
+      ansible.builtin.debug:
+        msg: "{{ dict | dict2items(key_name='type', value_name='Name') }}"
+
+    - name: Use itemvar list
+      ansible.builtin.debug:
+        msg: "{{ itemvar }}"
+    - name: Use itemvar list
+      ansible.builtin.debug:
+        msg: "{{ itemvar | items2dict}}"
+    - name: Use itemvar list
+      ansible.builtin.debug:
+        msg: "{{ fruitvar}}"
+    - name: Use itemvar list
+      ansible.builtin.debug:
+        msg: "{{ fruitvar | items2dict(key_name='fruit',value_name='color')}}"
+
