@@ -1,0 +1,10 @@
+- hosts: all
+  tasks:
+    - name: Add several users
+      ansible.builtin.user:
+        name: "{{ item }}"
+        state: absent
+      loop:
+        - anand
+        - gagana
+        - sandeep

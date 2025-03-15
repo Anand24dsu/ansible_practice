@@ -1,0 +1,26 @@
+- hosts: all
+  gather_facts: no
+  vars:
+    itemvar:
+      - key: "deveops"
+        value: "Sandeep"
+      - key: "Developer"
+        value: "Anand"
+    tag_data:
+      Environment: dev
+      Application: payment
+      Role: SRE
+  tasks:
+    - name: Using dict2items to convert dictionary to list
+      ansible.builtin.debug:
+        msg: "{{ item.key }} - {{ item.value }}"
+      loop: "{{ tag_data | dict2items }}"
+      register: anand
+
+    - name: Display registered output
+      ansible.builtin.debug:
+        msg: "{{ anand.results | map(attribute='msg') | list }}"
+
+    - name: Display first result correctly
+      ansible.builtin.debug:
+        msg: "{{ anand }}"
